@@ -1,1 +1,18 @@
-/* pages/check/check.wxss */
+.quan {
+  height: 75rpx;
+  width: 500rpx;
+  margin-right: 20rpx;
+  border-radius: 40rpx;
+  background-color: rgb(243, 243, 243);
+  display: flex;
+  align-items: center;
+
+}
+
+.box {
+  margin: 30rpx;
+  width: 92vw;
+  height: 600rpx;
+  background-color: bisque;
+  border-radius: 10rpx;
+}

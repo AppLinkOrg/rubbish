@@ -14,6 +14,7 @@ class Content extends AppBase {
   }
   onMyShow() {
     var that = this;
+    
   }
   setPageTitle() {
     wx.setNavigationBarTitle({

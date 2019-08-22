@@ -2,38 +2,25 @@
 import { MemberApi } from "../apis/member.api";
 import { WechatApi } from "../apis/wechat.api";
  */
-import {
-  ApiConfig
-} from "apis/apiconfig.js";
-import {
-  ApiUtil
-} from "apis/apiutil.js";
-import {
-  InstApi
-} from "apis/inst.api.js";
-import {
-  MemberApi
-} from "apis/member.api";
-import {
-  WechatApi
-} from "apis/wechat.api";
+import { ApiConfig } from "apis/apiconfig.js";
+import { ApiUtil } from "apis/apiutil.js";
+import { InstApi } from "apis/inst.api.js";
+import { MemberApi } from "apis/member.api";
+import { WechatApi } from "apis/wechat.api";
 
 export class AppBase {
   static BRANDAPPLE = 12;
   static QQMAPKEY = "IDVBZ-TSAKD-TXG43-H442I-74KVK-6LFF5";
   static UserInfo = {};
   static InstInfo = {};
-  unicode = "qiming";
-  needauth = false;
+  unicode = "rubbish";
+  needauth = true;
   pagetitle = null;
   app = null;
   options = null;
   data = {
     uploadpath: ApiConfig.GetUploadPath(),
-    copyright: {
-      name: "",
-      website: "mecloud.com"
-    }
+    copyright: { name: "", website: "mecloud.com" }
   };
   Page = null;
   util = ApiUtil;
@@ -114,7 +101,7 @@ export class AppBase {
       contactkefu: base.contactkefu,
       contactweixin: base.contactweixin,
       download: base.download,
-      checkPermission: base.checkPermission
+      backtobottom: base.backtobottom
 
 
 
@@ -128,9 +115,7 @@ export class AppBase {
     console.log(options);
     console.log("onload");
     this.Base.setBasicInfo();
-    this.Base.setMyData({
-      options: options
-    });
+    this.Base.setMyData({ options: options });
 
     ApiConfig.SetUnicode(this.Base.unicode);
   }
@@ -140,7 +125,7 @@ export class AppBase {
       title: '需要您授权才能正常使用小程序',
       content: '请点击“去设置”并启用“用户信息”，然后确定即可正常使用',
       confirmText: "去设置",
-      success: function(res) {
+      success: function (res) {
         if (res.confirm) {
           wx.openSetting({
 
@@ -156,15 +141,12 @@ export class AppBase {
   }
   onReady() {
     console.log("onReady");
-  }
-  minimm
+  } minimm
   onShow() {
     var that = this;
     var instapi = new InstApi();
     instapi.resources({}, (res) => {
-      this.Base.setMyData({
-        res
-      });
+      this.Base.setMyData({ res });
     });
 
     instapi.info({}, (instinfo) => {
@@ -172,16 +154,8 @@ export class AppBase {
 
         return;
       }
-      if (instinfo.instswitch == '否') {
-        wx.reLaunch({
-          url: '/pages/content/content?keycode=kaiguan',
-        })
-
-      }
       AppBase.InstInfo = instinfo;
-      this.Base.setMyData({
-        instinfo: instinfo
-      });
+      this.Base.setMyData({ instinfo: instinfo });
       if (this.Base.pagetitle == null) {
         this.Base.setPageTitle(instinfo);
       } else {
@@ -202,10 +176,7 @@ export class AppBase {
               console.log(userres);
 
               var memberapi = new MemberApi();
-              memberapi.getuserinfo({
-                code: res.code,
-                grant_type: "authorization_code"
-              }, data => {
+              memberapi.getuserinfo({ code: res.code, grant_type: "authorization_code" }, data => {
                 console.log("here");
                 console.log(data);
                 AppBase.UserInfo.openid = data.openid;
@@ -219,85 +190,58 @@ export class AppBase {
                 memberapi.update(AppBase.UserInfo, () => {
 
                   console.log(AppBase.UserInfo);
-                  that.Base.setMyData({
-                    UserInfo: AppBase.UserInfo
+                  that.Base.setMyData({ UserInfo: AppBase.UserInfo });
+                  memberapi.info({}, (info) => {
+                    this.Base.setMyData({ memberinfo: info });
+                    that.onMyShow();
                   });
-
-                  that.checkPermission();
 
                 });
 
                 //that.Base.getAddress();
               });
             },
-            fail: faukres => {
-              var memberapi = new MemberApi();
+            fail: res => {
+              console.log("auth fail");
               console.log(res);
-              memberapi.getuserinfo({
-                code: res.code,
-                grant_type: "authorization_code"
-              }, data => {
-                console.log(data);
-                AppBase.UserInfo.openid = data.openid;
-                AppBase.UserInfo.session_key = data.session_key;
-                ApiConfig.SetToken(data.openid);
-                memberapi.update(AppBase.UserInfo, () => {
-                  if (this.Base.needauth == true) {
-                    wx.redirectTo({
-                      url: '/pages/auth/auth',
-                    })
-                  } else {
-                    that.onMyShow();
-                  }
-                });
-              });
-
+              //that.Base.gotoOpenUserInfoSetting();
+              if (this.Base.needauth == true) {
+                wx.redirectTo({
+                  url: '/pages/auth/auth',
+                })
+              } else {
+                that.onMyShow();
+              }
+              //that.getAddress();
             }
-          })
+          });
+
         }
-      });
+      })
       return false;
     } else {
       if (that.setMyData != undefined) {
-        that.setMyData({
-          UserInfo: AppBase.UserInfo
-        });
+        that.setMyData({ UserInfo: AppBase.UserInfo });
       } else {
-        that.Base.setMyData({
-          UserInfo: AppBase.UserInfo
-        });
+        that.Base.setMyData({ UserInfo: AppBase.UserInfo });
       }
       //this.loadtabtype();
 
-      that.Base.setMyData({
-        UserInfo: AppBase.UserInfo
-      });
+      that.Base.setMyData({ UserInfo: AppBase.UserInfo });
 
-      that.checkPermission();
+      var memberapi = new MemberApi();
+      memberapi.info({}, (info) => {
+        this.Base.setMyData({ memberinfo: info });
+        ApiUtil.renamelist = info.renamelist;
+        that.onMyShow();
+      });
     }
 
-  }
-  checkPermission() {
-    var memberapi = new MemberApi();
-    var that = this;
-    memberapi.info({}, (info) => {
-      if (info.mobile == "" && this.Base.needauth == true) {
-        wx.navigateTo({
-          url: '/pages/auth/auth',
-        })
-      } else {
-
-        this.Base.setMyData({
-          memberinfo: info
-        });
-        that.onMyShow();
-      }
-    });
   }
   loadtabtype() {
     console.log("loadtabtype");
     var memberapi = new MemberApi();
-    memberapi.update(AppBase.UserInfo, () => {});
+    memberapi.update(AppBase.UserInfo, () => { });
   }
 
   onMyShow() {
@@ -324,7 +268,7 @@ export class AppBase {
 
   dataReturn(data) {
     var pages = getCurrentPages();
-    var currPage = pages[pages.length - 1]; //当前页面
+    var currPage = pages[pages.length - 1];  //当前页面
     var prevPage = pages[pages.length - 2]; //上一个页面
     console.log("????");
     //直接调用上一个页面的setData()方法，把数据存到上一个页面中去
@@ -350,8 +294,8 @@ export class AppBase {
     var data = this.Base.getMyData();
     console.log(data);
 
-    e.detail.session_key = AppBase.UserInfo.session_key;
-    e.detail.openid = AppBase.UserInfo.openid;
+    e.detail.session_key = AppBase.session_key;
+    e.detail.openid = AppBase.openid;
     console.log(e.detail);
     api.decrypteddata(e.detail, (ret) => {
       console.log(ret);
@@ -399,7 +343,7 @@ export class AppBase {
     console.log("getmyaddress");
     if (lat == undefined && lng == undefined) {
       wx.getLocation({
-        success: function(res) {
+        success: function (res) {
           lat = res.latitude;
           lng = res.longitude;
           AppBase.QQMAP.reverseGeocoder({
@@ -407,16 +351,16 @@ export class AppBase {
               latitude: lat,
               longitude: lng
             },
-            success: function(res) {
+            success: function (res) {
               //that.setMyData({ addressinfo:res.result });
               callback(res.result);
             },
-            fail: function(res) {
+            fail: function (res) {
               console.log("fail get location");
               callback(res.result);
               console.log(res);
             },
-            complete: function(res) {
+            complete: function (res) {
               console.log("complete");
               console.log(res);
             }
@@ -429,16 +373,16 @@ export class AppBase {
           latitude: lat,
           longitude: lng
         },
-        success: function(res) {
+        success: function (res) {
           console.log("success");
           console.log(res);
           callback(res.result);
         },
-        fail: function(res) {
+        fail: function (res) {
           console.log("fail");
           console.log(res);
         },
-        complete: function(res) {
+        complete: function (res) {
           console.log("complete");
           console.log(res);
         }
@@ -455,7 +399,7 @@ export class AppBase {
     var address = e.currentTarget.id;
     AppBase.QQMAP.geocoder({
       address: address,
-      success: function(res) {
+      success: function (res) {
         if (res.status == 0) {
           var lat = res.result.location.lat;
           var lng = res.result.location.lng;
@@ -465,16 +409,16 @@ export class AppBase {
             address: address,
             latitude: lat,
             longitude: lng,
-            success: function(res) {
+            success: function (res) {
 
             }
           })
         }
       },
-      fail: function(res) {
+      fail: function (res) {
         console.log(res);
       },
-      complete: function(res) {
+      complete: function (res) {
         console.log(res);
       }
     });
@@ -490,7 +434,7 @@ export class AppBase {
         'module': modul,
         "field": "file"
       },
-      success: function(res) {
+      success: function (res) {
         console.log(res);
         var data = res.data
         if (data.substr(0, 7) == "success") {
@@ -513,7 +457,7 @@ export class AppBase {
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
       count: count,
-      success: function(res) {
+      success: function (res) {
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         console.log(res.tempFilePaths);
         //that.setData({
@@ -530,7 +474,7 @@ export class AppBase {
               'module': modul,
               "field": "file"
             },
-            success: function(res) {
+            success: function (res) {
               console.log(res);
               var data = res.data
               if (data.substr(0, 7) == "success") {
@@ -561,7 +505,7 @@ export class AppBase {
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
       count: 1,
-      success: function(res) {
+      success: function (res) {
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         console.log(res.tempFilePaths);
         //that.setData({
@@ -578,7 +522,7 @@ export class AppBase {
               'module': modul,
               "field": "file"
             },
-            success: function(res) {
+            success: function (res) {
               console.log(res);
               var data = res.data
               if (data.substr(0, 7) == "success") {
@@ -609,7 +553,7 @@ export class AppBase {
       compressed: true, // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
       maxDuration: 60,
-      success: function(res) {
+      success: function (res) {
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         console.log(res.tempFilePaths);
         //that.setData({
@@ -628,7 +572,7 @@ export class AppBase {
               'module': modul,
               "field": "file"
             },
-            success: function(res) {
+            success: function (res) {
               console.log(res);
               var data = res.data
               if (data.substr(0, 7) == "success") {
@@ -659,7 +603,7 @@ export class AppBase {
       count: 1,
       sizeType: ['original'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['camera'], // 可以指定来源是相册还是相机，默认二者都有
-      success: function(res) {
+      success: function (res) {
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         console.log(res.tempFilePaths);
         //that.setData({
@@ -676,7 +620,7 @@ export class AppBase {
               'module': modul,
               "field": "file"
             },
-            success: function(res) {
+            success: function (res) {
               console.log(res);
               var data = res.data
               if (data.substr(0, 7) == "success") {
@@ -706,7 +650,7 @@ export class AppBase {
       sizeType: ['original'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['camera'], // 可以指定来源是相册还是相机，默认二者都有
       maxDuration: 60,
-      success: function(res) {
+      success: function (res) {
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         console.log(res.tempFilePaths);
         //that.setData({
@@ -723,7 +667,7 @@ export class AppBase {
               'module': modul,
               "field": "file"
             },
-            success: function(res) {
+            success: function (res) {
               console.log(res);
               var data = res.data
               if (data.substr(0, 7) == "success") {
@@ -830,10 +774,7 @@ export class AppBase {
     })
   }
   console(key, val) {
-    var json = {
-      key,
-      val
-    };
+    var json = { key, val };
     console.log(json);
   }
 
@@ -853,14 +794,14 @@ export class AppBase {
   download(url, callback, open = false) {
     wx.downloadFile({
       url: url, //仅为示例，并非真实的资源
-      success: function(res) {
+      success: function (res) {
         // 只要服务器有响应数据，就会把响应内容写入文件并进入 success 回调，业务需要自行判断是否下载到了想要的内容
         if (res.statusCode === 200) {
           var tempFilePath = res.tempFilePath;
           console.log(tempFilePath);
           wx.saveImageToPhotosAlbum({
             filePath: tempFilePath,
-            success: function(res) {
+            success: function (res) {
               var savedFilePath = res.savedFilePath;
               if (open == true) {
                 wx.openDocument({
@@ -921,4 +862,11 @@ export class AppBase {
       icon: "none"
     })
   }
-}
+  backtobottom() {
+    console.log("backtobottom");
+    wx.pageScrollTo({
+      scrollToBottom: 0,
+      duration: 300
+    })
+  }
+} 

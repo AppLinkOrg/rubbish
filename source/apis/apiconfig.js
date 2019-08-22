@@ -1,13 +1,13 @@
 export class ApiConfig {
 
   static GetApiUrl() {
-    return "https://cmsdev.app-link.org/alucard263096/qiming/api/";
+    return "https://cmsdev.app-link.org/alucard263096/rubbish/api/";
   }
   static GetUploadPath() {
-    return "https://alioss.app-link.org/alucard263096/qiming/";
+    return "https://alioss.app-link.org/alucard263096/rubbish/";
   }
   static GetFileUploadAPI() {
-    return "https://cmsdev.app-link.org/alucard263096/qiming/fileupload";
+    return "https://cmsdev.app-link.org/alucard263096/rubbish/fileupload";
   }
 
   static GetHeader() {

@@ -1,2 +1,23 @@
-<!--pages/check/check.wxml-->
-<text>pages/check/check.wxml</text>
+<import src="../../wxParse/wxParse.wxml" />
+
+<view class="flex-row margin-top-30">
+  <image class='icon-25 margin-left-30 margin-top-20' src='{{uploadpath}}resource/{{res.dingwei}}'></image>
+  <view class="margin-left-20 margin-top-20 txt-black txt-bold">{{myaddress.city}}</view>
+  <view class="quan flex-row margin-left-30">
+    <image class='icon margin-left-30 ' src='{{uploadpath}}resource/{{res.sousuo}}' bindtap="bindsousuo"></image>
+    <input class=" margin-left-10 h5" placeholder="搜索垃圾查看对应分类"></input>
+  </view>
+</view>
+<view class="flex-row margin-top">
+
+  <view wx:for="{{one}}" class="" bindtap='bindcheck' data-check='{{item.id}}'>
+    <image class='icon-75 margin-left-30 ' src='{{uploadpath}}rubbish/{{item.tupian}}'></image>
+  </view>
+
+</view>
+
+<view class="box">
+  <view class='margin-left-30 margin-right-30'>
+    <template is="wxParse" data="{{wxParseData:item.nodes}}" />
+  </view>
+</view>
