@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/check/check",
+    "pages/ceshi/ceshi",
     "pages/auth/auth"
   ],
   "permission": {
@@ -11,8 +13,28 @@
   "window": {
     "backgroundTextStyle": "light",
     "enablePullDownRefresh": true,
-    "navigationBarBackgroundColor": "white",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#143779",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#bfbfbf",
+    "selectedColor": "#4C556E",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "text": "查询",
+        "pagePath": "pages/check/check",
+        "iconPath": "images/icons/a-a.png",
+        "selectedIconPath": "images/icons/a.png"
+      },  
+      {
+        "text": "测试",
+        "pagePath": "pages/ceshi/ceshi",
+        "iconPath": "images/icons/b-b.png",
+        "selectedIconPath": "images/icons/b.png"
+      }
+    ]
   },
   "sitemapLocation": "sitemap.json"
 }
