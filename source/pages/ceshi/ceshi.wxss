@@ -7,7 +7,7 @@ page {
   margin: 30rpx;
   border-radius: 15rpx;
   width: 92vw;
-  height: 65vh;
+  height: 70vh;
 }
 
 .btn {
@@ -15,25 +15,24 @@ page {
   margin-right: 40rpx;
   margin-bottom: 30rpx;
   border-radius: 45rpx;
-  background-color: #f1f1f1;
+  
   width: 81vw;
   height: 90rpx;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+.tijiao{
+  background-color: #17c364;
+  color: white;
+  height: 70rpx;
+  width: 100rpx;
+  border-radius: 12rpx;
 
-.biao {
-  border-top: 1rpx solid #882f2f;
-  border-bottom: 1rpx solid #882f2f;
-  padding-top: 10rpx;
-  width: 92 vw;
-  margin-top: 20rpx;
-  margin-bottom: 20rpx;
-  padding-bottom: 10rpx;
- 
 }
-.right{
-   border-right: 1rpx solid #882f2f;
-   height: 10rpx;
+.bg-gray{
+  background-color: #f1f1f1;
+}
+.bg-blue{
+  background-color: rgb(48, 212, 103); 
 }

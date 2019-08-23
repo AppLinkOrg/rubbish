@@ -1,9 +1,12 @@
 {
   "pages": [
+    
     "pages/check/check",
     "pages/content/content",
     "pages/ceshi/ceshi",
+    "pages/report/report",
     "pages/home/home",
+    "pages/find/find",
     "pages/auth/auth"
   ],
   "window": {

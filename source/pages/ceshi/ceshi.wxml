@@ -1,75 +1,58 @@
 <view class="box">
-  <view class="flex-row">
-    <view class="margin-left-30 margin-top-30 txt-black h5">题目</view>
-    <view class="flex-1"></view>
-    <view class="margin-top-30 txt-lv h5">1</view>
-    <view class="margin-top-30 margin-right-30 h5">/10</view>
-  </view>
-  <view class="flex-row flex-column">
-    <view class="h3 txt-black">烫伤膏</view>
-    <view class="txt-black margin-top-20">烫伤膏</view>
-  </view>
-  <view class="">
-    <view class="margin-left-30 margin-top-30 margin-bottom-20">请选择：</view>
-    <view class="btn flex-row">
-      <image class='icon-25 ' src='{{uploadpath}}resource/{{res.chuyu}}'></image>
-      <view class="margin-left-10">厨余垃圾</view>
-    </view>
-    <view class="btn flex-row">
-      <image class='icon-25 ' src='{{uploadpath}}resource/{{res.qita}}'></image>
-      <view class="margin-left-10">其他垃圾</view>
-    </view>
-    <view class="btn flex-row">
-      <image class='icon-25 ' src='{{uploadpath}}resource/{{res.huishou}}'></image>
-      <view class="margin-left-10">可回收物</view>
-    </view>
-    <view class="btn flex-row">
-      <image class='icon-25 ' src='{{uploadpath}}resource/{{res.youhai}}'></image>
-      <view class="margin-left-10">有害垃圾</view>
-    </view>
-  </view>
-  <view class="flex-row flex-column">
-    <view class="txt-black h2">深圳市垃圾分类统考</view>
-    <view class="txt-red h3">分</view>
-  </view>
-  <view class="biao">
-    <view class="flex-row bg-gray">
-      <view class="txt-black margin-left-70 txt-bold">题目</view>
-      <view class="flex-1"></view>
-      <view class="right"></view>
-      <view class="txt-black margin-right-40 txt-bold">我的答案</view>
-      <view class="txt-black margin-right-30 txt-bold">是否正确</view>
-    </view>
-    <view class="flex-row ">
-      <view class="margin-left-20">1</view>
-      <view class="txt-black margin-left-30">题目</view>
-      <view class="flex-1"></view>
-      <view class="txt-black margin-right-40">我的答案</view>
-      <view class="txt-black margin-right-30">是否正确</view>
-    </view>
-    <view class="flex-row bg-gray">
-      <view class="margin-left-20">2</view>
-      <view class="txt-black margin-left-30">题目</view>
-      <view class="flex-1"></view>
-      <view class="txt-black margin-right-40">我的答案</view>
-      <view class="txt-black margin-right-30">是否正确</view>
-    </view>
-  </view>
-</view>
 
-<view class="flex-row ">
-  <view class="flex-column margin-left-50">
-    <image class='icon  margin-left-70' src='{{uploadpath}}resource/{{res.baocun}}' bindtap="bindsousuo"></image>
-    <view class="txt-black">保存成绩单</view>
-  </view>
- 
-  <view class="flex-column margin-left-70">
-    <image class='icon ' src='{{uploadpath}}resource/{{res.zaici}}' bindtap="bindsousuo"></image>
-    <view class="txt-black">再考一次</view>
-  </view>
-   
-  <view class="flex-column margin-right-50">
-    <image class='icon margin-left-15 ' src='{{uploadpath}}resource/{{res.share}}' bindtap="bindsousuo"></image>
-    <view class="txt-black">分享</view>
-  </view>
+  <swiper class="" interval="3000" current='{{nextone}}' duration="500" style='width:750rpx;height:800rpx;'>
+    <block wx:for="{{lajisousuo}}" wx:key="index">
+      <swiper-item catchtouchmove="stopTouchMove">
+
+        <view class="flex-row">
+          <view class="margin-left-30 margin-top-30 txt-black h5">题目:</view>
+          <view class="margin-top-30 txt-lv h5 margin-left-10">{{index+1}}</view>
+          <view class="margin-top-30 h5">/{{lajisousuo.length}}</view>
+        </view>
+        <view class="flex-row flex-column">
+          <view class="h3 txt-black">{{item.name}}</view>
+          <view class="txt-black margin-top-20">属于以下哪种分类</view>
+        </view>
+
+        <view class="">
+          <view class="margin-left-30 margin-top-30 margin-bottom-20">请选择：</view>
+          <view class="" bindtap="binddianji" data-check="A" id="{{index}}"  data-title="{{item.name}}" data-cat="{{item.cat}}">
+            <view class="btn  flex-row {{check!='A'||id!=index?'bg-gray':'bg-blue'}}"  >
+              <image class='icon-25 ' src='{{uploadpath}}resource/{{res.chuyu}}'></image>
+              <view class="margin-left-10 {{check!='A'||id!=index?'':'txt-white'}}">厨余垃圾</view>
+            </view>
+
+          </view>
+
+          <view class="" bindtap="binddianji" data-check="B" id="{{index}}"  data-title="{{item.name}}" data-cat="{{item.cat}}">
+            <view class="btn  flex-row {{check!='B'||id!=index?'bg-gray':'bg-blue'}}" >
+              <image class='icon-25 ' src='{{uploadpath}}resource/{{res.qita}}'></image>
+              <view class="margin-left-10 {{check!='B'||id!=index?'':'txt-white'}}">其他垃圾</view>
+            </view>
+
+          </view>
+
+          <view class="" bindtap="binddianji" data-check="C" id="{{index}}"  data-title="{{item.name}}" data-cat="{{item.cat}}">
+            <view class="btn  flex-row {{check!='C'||id!=index?'bg-gray':'bg-blue'}}" >
+              <image class='icon-25 ' src='{{uploadpath}}resource/{{res.huishou}}'></image>
+              <view class="margin-left-10 {{check!='C'||id!=index?'':'txt-white'}}">可回收物</view>
+            </view>
+
+          </view>
+
+          <view class="" bindtap="binddianji" data-check="D" id="{{index}}"  data-title="{{item.name}}" data-cat="{{item.cat}}">
+            <view class="btn  flex-row {{check!='D'||id!=index?'bg-gray':'bg-blue'}}"  >
+              <image class='icon-25 ' src='{{uploadpath}}resource/{{res.youhai}}'></image>
+              <view class="margin-left-10 {{check!='D'||id!=index?'':'txt-white'}}">有害垃圾</view>
+            </view>
+
+          </view>
+
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- <view class="tijiao">
+    <view class="txt-black flex-row " bindtap="bindtijiao">提交</view>
+  </view> -->
 </view>

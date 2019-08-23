@@ -1,15 +1,15 @@
 /*******使用方法，下面两句复制到page的js文件的头部
 
 import { ApiConfig } from '../../apis/apiconfig';
-import { InstApi } from '../../apis/boybaby.api';
+import { InstApi } from '../../apis/baocun.api';
 
-var boybabyApi=new BoybabyApi();
+var baocunApi=new BaocunApi();
 *******/
 import { ApiConfig } from 'apiconfig';
-export class BoybabyApi{
+export class BaocunApi{
 
 
-    boybabylist(json, callback, showLoading = true) {
+    baocuntu(json, callback, showLoading = true) {
 
         if (showLoading)
             ApiConfig.ShowLoading();
@@ -18,7 +18,7 @@ export class BoybabyApi{
         console.log(header);
         console.log(json);
         wx.request({
-            url: ApiConfig.GetApiUrl() + 'boybaby/boybabylist',
+            url: ApiConfig.GetApiUrl() + 'baocun/baocuntu',
             data: json,
             method: 'POST',
             dataType: 'json',

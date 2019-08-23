@@ -1,0 +1,45 @@
+<view class="box">
+  <view class="flex-row flex-column ">
+    <view class="txt-black h2 margin-top">深圳市垃圾分类统考</view>
+    <view class="txt-red h3">分</view>
+  </view>
+  <view class="biao">
+    <view class="flex-row bg-gray">
+      <view class="txt-black margin-left-70 txt-bold">题目</view>
+      <view class="flex-1"></view>
+      <view class="right"></view>
+      <view class="txt-black margin-right-40 txt-bold">我的答案</view>
+      <view class="txt-black margin-right-30 txt-bold">正确答案</view>
+    </view>
+    <view wx:for="{{laji}}">
+      <view class="flex-row ">
+        <view class="margin-left-20 h5">{{index+1}}</view>
+        <view class="txt-black margin-left-30 h5">{{item.title}}</view>
+        <view class="flex-1"></view>
+        <view class="txt-black margin-right-50 h5">{{item.xuanxiang}}</view>
+        <view class="txt-black margin-right-40 h5">{{item.cat}}</view>
+      </view>
+    </view>
+
+  </view>
+  <view class="flex-row dibu">
+    <!-- <view class="flex-column margin-left-50">
+      <image class='icon  margin-left-70' src='{{uploadpath}}resource/{{res.baocun}}' bindtap="bindsousuo"></image>
+      <view class="txt-black">保存成绩单</view>
+    </view> -->
+
+    <view class="flex-column margin-left-70" bindtap="bindzaici">
+      <image class='icon margin-left-50' src='{{uploadpath}}resource/{{res.zaici}}' ></image>
+      <view class="txt-black">再考一次</view>
+    </view>
+
+    <view class="flex-column margin-left-90" bindtap="bindshare">
+      <image class='icon margin-left-15 ' src='{{uploadpath}}resource/{{res.share}}'></image>
+      <view class="txt-black">分享</view>
+    </view>
+  </view>
+</view>
+
+
+
+

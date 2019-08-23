@@ -3,11 +3,13 @@
 <view class="flex-row margin-top-30">
   <image class='icon-25 margin-left-30 margin-top-20' src='{{uploadpath}}resource/{{res.dingwei}}'></image>
   <view class="margin-left-20 margin-top-20 txt-black txt-bold">{{myaddress.city}}</view>
-  <view class="quan flex-row margin-left-30">
+  <view class="quan flex-row margin-left-30" bindtap="bindfind">
     <image class='icon margin-left-30 ' src='{{uploadpath}}resource/{{res.sousuo}}' bindtap="bindsousuo"></image>
-    <input class=" margin-left-10 h5" placeholder="搜索垃圾查看对应分类"></input>
+    <input class=" margin-left-10 h5" placeholder="搜索垃圾查看对应分类" bindinput="bindcha"></input>
+    
   </view>
 </view>
+
 <view class="flex-row margin-top">
 
   <view wx:for="{{one}}" class="" bindtap='bindcheck' data-check='{{item.id}}'>

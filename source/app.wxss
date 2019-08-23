@@ -408,6 +408,10 @@ button[disabled][type=primary] {
 .margin-left-70{
   margin-left:70rpx;
 }
+
+.margin-left-90{
+  margin-left:90rpx;
+}
 .margin-right-15{
   margin-right:15rpx;
 }

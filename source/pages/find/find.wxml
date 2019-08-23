@@ -1,0 +1,13 @@
+<view class="flex-row">
+<view class="quan flex-row margin-left-30 margin-top-30" bindtap="bindfind">
+  <image class='icon margin-left-30 ' src='{{uploadpath}}resource/{{res.sousuo}}' bindtap="bindsousuo"></image>
+  <input class=" margin-left-10 h5" placeholder="搜索垃圾查看对应分类" bindinput="bindcha"></input>
+  <!-- <image class='icon margin-left-50 ' src='{{uploadpath}}resource/{{res.chu}}' bindtap="bindxiaochu"></image> -->
+</view>
+<view class="margin-top txt-black" bindtap="bindquxiao">取消</view>
+</view>
+
+<view wx:for="{{check}}" class="margin-left-30 flex-row margin-top-20">
+  <view class="txt-green"> {{item.name}}</view>
+  <view class="margin-left-30 txt-green">[{{item.cat}}]</view>
+</view>

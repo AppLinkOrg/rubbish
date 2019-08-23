@@ -11,6 +11,8 @@ import {
 import {
   RubbishApi
 } from "../../apis/rubbish.api.js";
+
+
 var WxParse = require('../../wxParse/wxParse');
 class Content extends AppBase {
   constructor() {
@@ -23,7 +25,7 @@ class Content extends AppBase {
     this.Base.setMyData({
       mylat: 0,
       mylng: 0,
-      check: 'A'
+      //check: 'A'
     })
 
   }
@@ -31,10 +33,9 @@ class Content extends AppBase {
     var that = this;
     var instapi = new InstApi();
     var rubbishapi = new RubbishApi();
-    rubbishapi.rubbishlist({
-    }, (one) => {
+    rubbishapi.rubbishlist({}, (one) => {
       this.Base.setMyData({
-        one
+        one: one
       });
     });
 
@@ -71,9 +72,22 @@ class Content extends AppBase {
     });
   }
 
+
+  bindfind() {
+    wx.navigateTo({
+      url: '/pages/find/find',
+    })
+  }
   bindsousuo() {
 
   }
+
+  // bindxiaochu(){
+  //   var that = this;
+  //   this.Base.setMyData({
+  //     name: ''
+  //   })
+  // }
 }
 var content = new Content();
 var body = content.generateBodyJson();
@@ -81,4 +95,7 @@ body.onLoad = content.onLoad;
 body.onMyShow = content.onMyShow;
 body.bindsousuo = content.bindsousuo;
 body.bindcheck = content.bindcheck;
+body.bindcha = content.bindcha;
+body.bindxiaochu = content.bindxiaochu;
+body.bindfind = content.bindfind;
 Page(body)
