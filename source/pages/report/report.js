@@ -12,7 +12,6 @@ import {
   BaocunApi
 } from "../../apis/baocun.api.js";
 
-
 class Content extends AppBase {
   constructor() {
     super();
@@ -29,14 +28,11 @@ class Content extends AppBase {
       // 要求小程序返回分享目标信息
       withShareTicket: true
     });
-
-   
   }
   
   onMyShow() {
     var that = this;
     var baocunapi = new BaocunApi();
-
   }
   setPageTitle() {
     wx.setNavigationBarTitle({

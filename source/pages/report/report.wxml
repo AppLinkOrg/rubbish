@@ -28,18 +28,14 @@
       <view class="txt-black">保存成绩单</view>
     </view> -->
 
-    <view class="flex-column margin-left-70" bindtap="bindzaici">
-      <image class='icon margin-left-50' src='{{uploadpath}}resource/{{res.zaici}}' ></image>
-      <view class="txt-black">再考一次</view>
+    <view class="flex-column margin-left-70 margin-top-30" bindtap="bindzaici">
+      <image class='icon margin-left-50' src='{{uploadpath}}resource/{{res.zaici}}'></image>
+      <view class="txt-black margin-top-30">再考一次</view>
     </view>
-
-    <view class="flex-column margin-left-90" bindtap="bindshare">
-      <image class='icon margin-left-15 ' src='{{uploadpath}}resource/{{res.share}}'></image>
+    <view class="flex-1"></view>
+    <button open-type="share" class="margin-right-70 btn" bindtap="bindshare" style="background-color:white;">
+      <image class='icon' src='{{uploadpath}}resource/{{res.share}}'></image>
       <view class="txt-black">分享</view>
-    </view>
+    </button>
   </view>
 </view>
-
-
-
-

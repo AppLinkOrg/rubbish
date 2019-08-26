@@ -10,7 +10,6 @@ page {
   height: 65vh;
 }
 
-
 .biao {
   border-top: 1rpx solid #882f2f;
   border-bottom: 1rpx solid #882f2f;
@@ -19,13 +18,18 @@ page {
   margin-top: 20rpx;
   margin-bottom: 20rpx;
   padding-bottom: 10rpx;
- 
 }
 
 .right {
   border-right: 1rpx solid #882f2f;
   height: 10rpx;
 }
-.dibu{
+
+.dibu {
   margin-top: 120rpx;
+}
+
+.btn::after {
+  border: unset ;
+
 }
