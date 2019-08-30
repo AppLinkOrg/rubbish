@@ -1,0 +1,55 @@
+<view class="padding-20">
+
+  回收员入驻信息填写</view>
+
+<view class="padding-20 flex-row flex-center">
+  <view>头像logo上传</view>
+  <image wx:if="{{fenmian==''}}" bindtap='jguploadimg' class="icon-100" src='{{uploadpath}}resource/{{res.sousuo}}'></image>
+
+
+  <image mode='aspectFill' src='{{uploadpath}}fenmian/{{fenmian}}' bindtap='jguploadimg' wx:if="{{fenmian!=''}}" class='icon-100'></image>
+</view>
+<view class="padding-20 flex-row flex-center">
+  <view style="width:200rpx;">姓名</view>
+  <input class='  ' placeholder-class='pc' name='jigou' bindinput="name" style='' placeholder='请填写回收员姓名'></input>
+</view>
+<view class="padding-20 flex-row flex-center">
+  <view style="width:200rpx;">联系电话</view>
+  <input class='  ' placeholder-class='pc' name='jigou' bindinput="dianhua" style='' placeholder='请填写回收员联系电话'></input>
+</view>
+<view class="padding-20 flex-row flex-center">
+  <view style="width:200rpx;">所在地区</view>
+  <input class='  ' placeholder-class='pc' name='jigou' bindinput="diqu" style='' placeholder='请填写回收所在地区'></input>
+
+</view>
+
+<view class="padding-20 flex-row ">
+  <view style="width:200rpx;">回收区域</view>
+  <view class="flex-1">
+    <block wx:for="{{huishoulist}}" wx:key='k' wx:for-index='idx'>
+      <input class='  ' placeholder-class='pc' data-id='{{idx}}' name='jigou' bindinput="quyu" style='' placeholder='请填写负责回收区域'></input>
+    </block>
+  </view>
+  <image bindtap="addhuishou" class="icon-25" src='{{uploadpath}}resource/{{res.sousuo}}'></image>
+</view>
+
+
+<view class="padding-20 ">
+  <view>请上传身份证正反面</view>
+  <view>
+    <image wx:if="{{zhenmian==''}}" bindtap='zhenmian' class="icon-100" src='{{uploadpath}}resource/{{res.sousuo}}'></image>
+  </view>
+
+  <view>
+    <image mode='aspectFill' src='{{uploadpath}}huishou/{{zhenmian}}' bindtap='zhenmian' wx:if="{{zhenmian!=''}}" class='icon-100'></image>
+  </view>
+  <view>
+    <image wx:if="{{fanmian==''}}" bindtap='fanmian' class="icon-100" src='{{uploadpath}}resource/{{res.sousuo}}'></image>
+  </view>
+
+  <view>
+    <image mode='aspectFill' src='{{uploadpath}}huishou/{{fanmian}}' bindtap='fanmian' wx:if="{{fanmian!=''}}" class='icon-100'></image>
+  </view>
+</view>
+
+<view bindtap="tijiao">提交</view>

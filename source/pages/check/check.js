@@ -27,7 +27,8 @@ class Content extends AppBase {
       mylng: 0,
       //check: 'A'
     })
-
+ 
+      
   }
   onMyShow() {
     var that = this;
@@ -37,8 +38,19 @@ class Content extends AppBase {
       this.Base.setMyData({
         one: one
       });
-    });
+      var one = this.Base.getMyData().one;
 
+      console.log(one);
+      var oneinfo = one[0];
+      console.log(oneinfo);
+      var kelon = { ...oneinfo };
+      kelon.content = this.Base.util.HtmlDecode(kelon.content);
+      WxParse.wxParse('item', 'html', kelon.content, this, 10);
+      this.Base.setMyData({
+        oneinfo
+      });
+    });
+  
     console.log("看看");
     this.Base.getAddress((address) => {
       console.log(address, "看看");
@@ -58,8 +70,7 @@ class Content extends AppBase {
 
     var oneinfo = oneinfo[0];
     console.log(oneinfo);
-    var kelon = { ...oneinfo
-    };
+    var kelon = { ...oneinfo};
     kelon.content = this.Base.util.HtmlDecode(kelon.content);
     WxParse.wxParse('item', 'html', kelon.content, this, 10);
     this.Base.setMyData({
@@ -81,7 +92,23 @@ class Content extends AppBase {
   bindsousuo() {
 
   }
+   lianxi(){
 
+     var instinfo = this.Base.getMyData().instinfo;
+     console.log(instinfo);
+     wx.showActionSheet({
+       itemList: [instinfo.kefuweixin,"一键复制"],
+       success(e) {
+         if (e.tapIndex == 0) {
+          
+         } else {
+           wx.setClipboardData({
+             data: instinfo.kefuweixin,
+           })
+         }
+       }
+     })
+   }
   // bindxiaochu(){
   //   var that = this;
   //   this.Base.setMyData({
@@ -98,4 +125,5 @@ body.bindcheck = content.bindcheck;
 body.bindcha = content.bindcha;
 body.bindxiaochu = content.bindxiaochu;
 body.bindfind = content.bindfind;
+body.lianxi = content.lianxi
 Page(body)

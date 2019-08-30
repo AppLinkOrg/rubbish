@@ -1,23 +1,62 @@
 page {
-  background-color: rgb(240, 240, 240);
+  background-color: #fbbf2e;
 }
 
 .box {
   background-color: white;
   margin: 30rpx;
   border-radius: 15rpx;
-  width: 92vw;
-  height: 65vh;
+  margin-top: 80rpx;
+    width: 92vw;
+  
+}
+.xhx{
+  border-bottom: 1rpx solid #edeceb;
+}
+.xian1{
+ background: #666666;
+  height: 605rpx;
+ width: 1rpx;
+ position: absolute;
+ margin-left:90rpx;
+
+}
+.reddi{
+ 
+ background: #E6E6E6;
+
+}
+.xian2{
+ background: #666666;
+  height: 605rpx;
+ width: 1rpx;
+ position: absolute;
+ margin-left:540rpx;
+
+}
+.xian3{
+ background: #666666;
+ height: 605rpx;
+ width: 1rpx;
+ position: absolute;
+ margin-left:380rpx;
+
+}
+.padding-5{
+
+  padding: 8rpx;
+}
+.henxian{
+ text-decoration: line-through;
 }
 
 .biao {
   border-top: 1rpx solid #882f2f;
   border-bottom: 1rpx solid #882f2f;
-  padding-top: 10rpx;
+
   width: 92 vw;
-  margin-top: 20rpx;
-  margin-bottom: 20rpx;
-  padding-bottom: 10rpx;
+ 
+ 
 }
 
 .right {

@@ -1,0 +1,5 @@
+.k{
+border:1rpx solid red;
+width: 80vw;
+height: 250rpx;
+}

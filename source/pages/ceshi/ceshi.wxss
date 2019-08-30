@@ -4,19 +4,26 @@ page {
 
 .box {
   background-color: white;
-  margin: 30rpx;
-  border-radius: 15rpx;
-  width: 92vw;
-  height: 70vh;
+  
+  width: 100vw;
+  height: 100vh;
 }
+.aa{
+  margin-top:17vh;
 
+}
+.tm{
+ margin-left:35vw;
+ margin-top:8vh;
+
+}
 .btn {
-  margin-left: 40rpx;
+  margin-left: 140rpx;
   margin-right: 40rpx;
   margin-bottom: 30rpx;
-  border-radius: 45rpx;
-  
-  width: 81vw;
+  border-radius: 10rpx;
+  background: #fbbf2e;
+  width: 60vw;
   height: 90rpx;
   display: flex;
   align-items: center;
