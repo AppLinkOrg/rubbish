@@ -1,1 +1,3 @@
-/* pages/yuyue/yuyue.wxss */
+.bian{
+ border-bottom: 2rpx solid rgb(196, 196, 196);
+}

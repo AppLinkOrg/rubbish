@@ -1,11 +1,10 @@
 {
   "pages": [
- 
     "pages/check/check",
     "pages/tijiaochengon/tijiaochengon",
     "pages/lianxirenxianqin/lianxirenxianqin",
-      "pages/yuyue/yuyue",
-      "pages/zhijie/zhijie",
+    "pages/yuyue/yuyue",
+    "pages/zhijie/zhijie",
     "pages/content/content",
     "pages/ceshi/ceshi",
     "pages/report/report",
@@ -13,7 +12,7 @@
     "pages/find/find",
     "pages/auth/auth",
     "pages/ruzhu/ruzhu",
-      "pages/huishou/huishou"
+    "pages/huishou/huishou"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -30,30 +29,27 @@
       {
         "text": "查询",
         "pagePath": "pages/check/check",
-        "iconPath": "images/icons/cx1.png",
-        "selectedIconPath": "images/icons/cx.png"
+        "iconPath": "images/icons/a-a.png",
+        "selectedIconPath": "images/icons/a.png"
       },
       {
         "text": "测试",
         "pagePath": "pages/ceshi/ceshi",
-        "iconPath": "images/icons/cs1.png",
-        "selectedIconPath": "images/icons/cs.png"
+        "iconPath": "images/icons/b-b.png",
+        "selectedIconPath": "images/icons/b.png"
       },
       {
         "text": "预约",
         "pagePath": "pages/huishou/huishou",
-        "iconPath": "images/icons/cs1.png",
-        "selectedIconPath": "images/icons/cs.png"
+        "iconPath": "images/icons/c-c.png",
+        "selectedIconPath": "images/icons/c.png"
       },
       {
         "text": "入驻",
         "pagePath": "pages/ruzhu/ruzhu",
-        "iconPath": "images/icons/cs1.png",
-        "selectedIconPath": "images/icons/cs.png"
+        "iconPath": "images/icons/d-d.png",
+        "selectedIconPath": "images/icons/d.png"
       }
-
-
-
     ]
   },
   "permission": {

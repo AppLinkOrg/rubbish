@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 8,
 			"list": [
 				{
 					"id": -1,
@@ -104,6 +104,12 @@
 					"name": "直接联系",
 					"pathName": "pages/zhijie/zhijie",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "预约成功提示/tijiaochengon",
+					"pathName": "pages/tijiaochengon/tijiaochengon",
 					"scene": null
 				}
 			]

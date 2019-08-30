@@ -1,17 +1,17 @@
-<view class="padding-20">{{mylocation.city}}</view>
+<view class="flex-row">
+  <image class='icon margin-left-30 margin-top-20' src='{{uploadpath}}resource/{{res.ding}}'></image>
+  <view class="padding-20 txt-black">{{mylocation.city}}</view>
+</view>
 
-<view bindtap="xianqin" data-id="{{item.id}}" class="flex-row flex-center padding-20" wx:for="{{huishoulist}}" wx:key="k">
-
-  <image class="icon-40" src="{{uploadpath}}huishou/{{item.photo}}"></image>
+<view bindtap="xianqin" data-id="{{item.id}}" class="flex-row bian flex-center padding-20" wx:for="{{huishoulist}}" wx:key="k">
+  <image class="icon-40 radius-50" src="{{uploadpath}}huishou/{{item.photo}}"></image>
   <view class="margin-left-20">
-    <view>{{item.name}}</view>
-    <view>{{item.dianhua}}</view>
+    <view class="txt-black">{{item.name}}</view>
+    <view class="txt-black">{{item.dianhua}}</view>
   </view>
   <view class="flex-1"></view>
   <view>
-    <view>负责区域</view>
-    <view>{{item.diqu}}</view>
-
+    <view class="txt-black">负责区域</view>
+    <view class="txt-black">{{item.diqu}}</view>
   </view>
-
 </view>

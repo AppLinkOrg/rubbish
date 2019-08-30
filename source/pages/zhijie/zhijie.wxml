@@ -1,64 +1,81 @@
-<view class="padding-20">预约回收信息</view>
-
+<view class="padding-20 txt-black h4">预约回收信息</view>
+<view class="border"></view>
 <view class="padding-20 flex-row flex-center">
-  <view style="width:200rpx;">姓名</view>
-  <input class='  ' placeholder-class='pc' name='jigou' bindinput="name" style='' placeholder='请填写联系人贵姓'></input>
+  <view class="txt-black" style="width:200rpx;">姓名</view>
+  <input class='' placeholder-class='pc' name='jigou' bindinput="name" style='' placeholder='请填写联系人贵姓'></input>
 </view>
-
+<view class="border"></view>
 <view class="padding-20 flex-row flex-center">
-  <view style="width:200rpx;">联系电话</view>
+  <view class="txt-black" style="width:200rpx;">联系电话</view>
   <input class='  ' placeholder-class='pc' name='jigou' bindinput="dianhua" style='' placeholder='请填写联系人电话'></input>
 </view>
+<view class="border"></view>
 <picker class='flex-2 ff' mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
   <view class="padding-20 flex-row flex-center">
-    <view style="width:200rpx;">所在地区</view>
+    <view class="txt-black" style="width:200rpx;">所在地区</view>
 
     <view class="picker ipt" style='color:#C8C8C8' wx:if="{{region.length==0}}">请填写地区</view>
     <view class="picker ipt" wx:if="{{region.length>0}}">{{region[0]}} {{region[1]}} {{region[2]}}</view>
-
   </view>
 </picker>
+<view class="border"></view>
 <view class="padding-20 flex-row flex-center">
-  <view style="width:200rpx;">具体地址</view>
+  <view class="txt-black" style="width:200rpx;">具体地址</view>
   <input class='  ' placeholder-class='pc' name='jigou' bindinput="dizhi" style='' placeholder='请填写具体详细地址'></input>
 </view>
-
+<view class="border"></view>
 
 <picker class="" mode="date" value="{{xssj}}" start="{{jintian}}" bindchange="bindDateChange">
-
   <view class="padding-20 flex-row flex-center">
-    <view style="width:200rpx;">预约日期</view>
-
+    <view class="txt-black" style="width:200rpx;">预约日期</view>
     <view class="section__title">{{xssj}} </view>
-
     <view wx:if="{{xssj==''}}" class="margin-right-10" style="color:#CCCCCC">请输入</view>
     <view class="flex-1"></view>
-    <image src="{{uploadpath}}resource/{{res.sousuo}}" mode="widthFix" class="icon-10"></image>
-
+    <image src="{{uploadpath}}resource/{{res.time}}" mode="widthFix" class="icon margin-right-20"></image>
   </view>
 </picker>
+<view class="border"></view>
 <view class="padding-20 flex-row flex-center">
-  <view style="width:200rpx;">预约时间</view>
-  <input class='  ' placeholder-class='pc' name='jigou' bindinput="shijian" style='' placeholder='请填写预约时间'></input>
+  <view class="txt-black" style="width:200rpx;">预约时间</view>
+  <input class='' placeholder-class='pc' name='jigou' bindinput="shijian" style='' placeholder='请填写预约时间'></input>
 </view>
-
+<view class="border"></view>
 
 <view class="padding-20 flex-row flex-center">
-  <view style="width:200rpx;">回收物品</view>
+  <view class="txt-black" style="width:200rpx;">回收物品</view>
   <input class='  ' placeholder-class='pc' name='jigou' bindinput="wupin" style='' placeholder='请填写回收物品种类'></input>
 </view>
-
+<view class="border"></view>
 <view class="padding-20 flex-row flex-center">
-  <view style="width:200rpx;">相关图片</view>
+  <view class="txt-black" style="width:200rpx;">相关图片</view>
   <view>可上传回收物品相关图片</view>
 
-
+</view>
+<!-- <view>
+  <image wx:if="{{zhenmian==''}}" bindtap='zhenmian' class="icon-100 margin-left-20" src='{{uploadpath}}resource/{{res.sousuo}}'></image>
 </view>
 <view>
-  <image wx:if="{{zhenmian==''}}" bindtap='zhenmian' class="icon-100" src='{{uploadpath}}resource/{{res.sousuo}}'></image>
-</view>
-<view>
-  <image mode='aspectFill' src='{{uploadpath}}huishou/{{zhenmian}}' bindtap='zhenmian' wx:if="{{zhenmian!=''}}" class='icon-100'></image>
+  <image mode='aspectFill' src='{{uploadpath}}huishou/{{zhenmian}}' bindtap='zhenmian' wx:if="{{zhenmian!=''}}" class='icon-100 margin-left-20'></image>
+</view> -->
+
+
+<!-- <view class='flex-row flex-center flex-wrap'>
+  <image class="img" style=' ' wx:for="{{images}}" wx:key="k" wx:for-index="idx" mode='aspectFill' src='{{uploadpath}}product/{{item}}' bindtap='zhenmian' id="{{idx}}"></image>
+  <image style='' bindtap='uploadimg' class='img' mode='aspectFill' src='{{uploadpath}}resource/{{res.sousuo}}'></image>
+</view> -->
+
+
+<view class='flex-row flex-center flex-wrap'>
+  <view class='margin-left-20' wx:for="{{skimages}}" wx:key="k" wx:for-index="idx">
+    <image src='{{uploadpath}}huishou/{{item}}' mode='aspectFill' wx:if='{{idx<20}}' id="{{idx}}" bindtap='skminusImg' class='icon-img'></image>
+  </view>
+  <view class='addjigou flex-row flex-center ' bindtap='skuploadimg' wx:if='{{skimages.length<20}}'>
+    <view class='flex-1'></view>
+    <image src='{{uploadpath}}resource/{{res.upload}}' class='icon-100 margin-left-30' mode='aspectFill'></image>
+    <view class='flex-1'></view>
+  </view>
 </view>
 
-<view class="text-center" bindtap="tijiao" style="width:100vw;marin-top:30rpx;">提交</view>
+
+
+<view class=" btn " bindtap="tijiao">提交</view>

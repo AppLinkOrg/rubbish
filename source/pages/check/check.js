@@ -77,11 +77,11 @@ class Content extends AppBase {
       oneinfo
     });
   }
-  setPageTitle() {
-    wx.setNavigationBarTitle({
-      title: '垃圾分类',
-    });
-  }
+  // setPageTitle() {
+  //   wx.setNavigationBarTitle({
+  //     title: '垃圾分类',
+  //   });
+  // }
 
 
   bindfind() {

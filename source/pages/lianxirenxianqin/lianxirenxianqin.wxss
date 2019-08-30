@@ -1,1 +1,10 @@
-/* pages/lianxirenxianqin/lianxirenxianqin.wxss */
+Page {
+    background: linear-gradient(to right, rgb(255, 255, 255), rgb(211, 210, 210));
+}
+.box{
+  background-color: white;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  border-radius: 30rpx;
+  box-shadow: 1rpx 2rpx 25rpx 2rpx rgb(173, 173, 173);
+}

@@ -42,11 +42,11 @@ class Content extends AppBase {
     });
 
   }
-  setPageTitle() {
-    wx.setNavigationBarTitle({
-      title: '测试',
-    });
-  }
+  // setPageTitle() {
+  //   wx.setNavigationBarTitle({
+  //     title: '测试',
+  //   });
+  // }
 
   binddianji(e) {
     // var id = e.currentTarget.id;

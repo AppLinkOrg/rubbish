@@ -16,7 +16,7 @@
 <view class="flex-1"></view>
 <view class="flex-row  flex-column">
 <view>没有找到您要的结果</view>
-<view  wx:if="{{weitijiao}}" bindtap="tijiao" style="color:#fbbf2e;margin-top:20rpx;">点击这里把'{{name}}'提交给我们把</view>
+<view  wx:if="{{weitijiao}}" bindtap="tijiao" style="color:#fbbf2e;margin-top:20rpx;">点击这里把'{{name}}'提交给我们吧</view>
 <view   wx:if="{{!weitijiao}}" style="color:#fbbf2e;margin-top:20rpx;" >感谢您的反馈</view>
 </view>
 <view class="flex-1"></view>

@@ -1,4 +1,32 @@
-<view class="flex-row flex-center" style="width:100vw;height:100vh">
+<view class='bg ' style='background-image:url({{uploadpath}}resource/{{res.yuyuebackground}});background-size:100% 100%'>
+
+  <view class="box top">
+    <view class=" flex-row margin-top-60" bindtap="huishou">
+      <image class='icon-60  margin-left-100 ' src='{{uploadpath}}resource/{{res.yuyue}}'></image>
+      <view class="margin-left-30 txt-black h4-5 margin-top txt-bold">预约回收</view>
+    </view>
+  
+  </view>
+
+  <view class="box margin-top" bindtap="zhijie">
+    <view class=" flex-row margin-top-60">
+      <image class='icon-60 margin-left-100' src='{{uploadpath}}resource/{{res.con}}'></image>
+      <view class="margin-left-30 txt-black h4-5 txt-bold margin-top">立即回收</view>
+    </view>
+  
+  </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+<!-- <view class="flex-row flex-center" style="width:100vw;height:100vh">
   <view class="flex-1"> </view>
   <view>
     <view class="k" bindtap="huishou">预约回收</view>
@@ -7,4 +35,4 @@
 
   </view>
   <view class="flex-1"> </view>
-</view>
+</view> -->

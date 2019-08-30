@@ -1,6 +1,18 @@
-<view>提交成功</view>
-<view>您的预约已经提交成功稍后会有专员为您联系</view>
+<view class='bg ' style='background-image:url({{uploadpath}}resource/{{res.submit}});background-size:100% 100%'>
 
-<view>感谢您的使用</view>
+  <!-- <view class="flex-row flex-column margin-top-100">
+    <view class="yuan">
+      <view class="flex-row flex-column margin-top-80 txt-black">提交成功</view>
+    </view>
+  </view> -->
+  <!-- <view class="flex-row flex-column margin-top-80">
+    <view class="txt-black h4">您的预约已经提交成功</view>
+    <view class="txt-black h4 margin-top-20">稍后会有专员为您联系！</view>
+  </view> -->
 
-<view bindtap="fanhui">返回首页</view>
+  <!-- <view class="flex-row flex-column margin-top-60 txt-black h4">感谢您的使用！</view> -->
+  
+  <view class="flex-row flex-column ">
+    <view class=" btn txt-black" bindtap="fanhui">返回首页</view>
+  </view>
+</view>

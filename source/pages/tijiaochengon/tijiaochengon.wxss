@@ -1,1 +1,19 @@
-/* pages/tijiaochengon/tijiaochengon.wxss */
+.bg {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.btn{
+  width: 180rpx;
+  height: 60rpx;
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 600rpx;
+  background-color: #2F8D5A;
+  color: white;
+}

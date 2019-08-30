@@ -1,28 +1,28 @@
-<view class="padding-20">
-  <view class="flex-row flex-center padding-20">
-
-    <image class="icon-40" src="{{uploadpath}}huishou/{{huishouinfo.photo}}"></image>
-    <view class="margin-left-20">{{huishouinfo.name}}</view>
-  </view>
-  <view class="padding-20 flex-row flex-center">
-    <view>联系电话</view>
-    <view class="flex-1"></view>
-    <view>{{huishouinfo.dianhua}}</view>
-  </view>
-  <view class="padding-20 flex-row flex-center">
-    <view>所在地区</view>
-    <view class="flex-1"></view>
-    <view>{{huishouinfo.diqu}}</view>
-  </view>
-
-  <view class="padding-20 flex-row flex-center">
-    <view class="">
-      <view >所负责区域街道小区</view>
-       <view wx:for="{{ss}}" wx:key='k' wx:for-index="idx"  >{{idx+1}}.{{item}}</view>
-       
+<view class="box margin-top-30">
+  <view class="padding-20">
+    <view class="flex-row flex-center padding-20">
+      <image class="icon-40 radius-50" src="{{uploadpath}}huishou/{{huishouinfo.photo}}"></image>
+      <view class="margin-left-20 txt-black">{{huishouinfo.name}}</view>
+    </view>
+    <view class="padding-20 flex-row flex-center">
+      <image class='icon margin-right-10 ' src='{{uploadpath}}resource/{{res.phone}}'></image>
+      <view class="txt-black">联系电话：</view>
+      <view class="txt-black">{{huishouinfo.dianhua}}</view>
+    </view>
+    <view class="padding-20 flex-row flex-center">
+      <image class='icon margin-right-10 ' src='{{uploadpath}}resource/{{res.diqu}}'></image>
+      <view class="txt-black">所在地区：</view>
+      <view class="txt-black">{{huishouinfo.diqu}}</view>
     </view>
 
+    <view class="padding-20 flex-row flex-center">
+      <view class="">
+        <view class="flex-row">
+          <image class='icon margin-right-10 ' src='{{uploadpath}}resource/{{res.xiaoqu}}'></image>
+          <view class="txt-black">所负责区域街道小区：</view>
+        </view>
+        <view class="txt-black margin-top-10 margin-left-50" wx:for="{{ss}}" wx:key='k' wx:for-index="idx">{{idx+1}}.{{item}}</view>
+      </view>
+    </view>
   </view>
-
-
 </view>

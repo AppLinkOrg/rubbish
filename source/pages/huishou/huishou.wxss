@@ -1,5 +1,31 @@
-.k{
-border:1rpx solid red;
-width: 80vw;
-height: 250rpx;
+page {
+  background-color: rgb(240, 240, 240);
 }
+
+.bg {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.k {
+  border: 1rpx solid red;
+  width: 80vw;
+  height: 250rpx;
+}
+
+.box {
+  height: 250rpx;
+  border-radius: 20rpx;
+  background-color: white;
+  margin-left: 120rpx;
+  margin-right: 120rpx;
+  box-shadow: 1rpx 2rpx 25rpx 2rpx rgb(184, 184, 184);
+}
+
+.top {
+  margin-top: 500rpx;
+}
+

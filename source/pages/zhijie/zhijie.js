@@ -35,6 +35,7 @@ class Content extends AppBase {
       shijian: '',
       wupin: '',
       diqu: '',
+      skimages: []
     });
 
 
@@ -68,16 +69,17 @@ class Content extends AppBase {
 
 
   }
-  zhenmian() {
-    this.Base.uploadOneImage("huishou", (ret) => {
 
-      this.Base.setMyData({
-        zhenmian: ret
-      })
+  // zhenmian() {
+  //   this.Base.uploadOneImage("huishou", (ret) => {
 
-    }, undefined);
+  //     this.Base.setMyData({
+  //       zhenmian: ret
+  //     })
 
-  }
+  //   }, undefined);
+
+  // }
   bindDateChange(e) {
     console.log(e);
 
@@ -144,9 +146,7 @@ class Content extends AppBase {
     var riqi = this.Base.getMyData().xssj;
     var shijian = this.Base.getMyData().shijian;
     var wupin = this.Base.getMyData().wupin;
-    var tupian = this.Base.getMyData().zhenmian;
-
-
+    var tupian = this.Base.getMyData().skminusImg;
     var json = {
       name: name,
       dianhua: dianhua,
@@ -158,14 +158,14 @@ class Content extends AppBase {
       tupian: tupian
     }
 
-
     var api = new YuyueApi();
     var dapi = new AliyunApi();
     api.yuyue(json, (res) => {
-
       if (res.code == 0) {
-
-        dapi.sendverifycode({ mobile: that.Base.getMyData().instinfo.shouji, type: 'tonzhi' }, (dx) => {
+        dapi.sendverifycode({
+          mobile: that.Base.getMyData().instinfo.shouji,
+          type: 'tonzhi'
+        }, (dx) => {
 
           wx.redirectTo({
             url: '/pages/tijiaochengon/tijiaochengon',
@@ -181,6 +181,33 @@ class Content extends AppBase {
 
   }
 
+  skuploadimg() {
+    var that = this;
+    this.Base.uploadImage("huishou", (ret) => {
+      var skimages = that.Base.getMyData().skimages;
+      skimages.push(ret);
+      that.Base.setMyData({
+        skimages
+      });
+    }, 9, undefined);
+  }
+
+
+  skminusImg(e) {
+    var that = this;
+    var seq = e.currentTarget.id;
+    var skimages = that.Base.getMyData().skimages;
+    var skimgs = [];
+    for (var i = 0; i < skimages.length; i++) {
+      if (seq != i) {
+        skimgs.push(skimages[i]);
+      }
+    }
+    that.Base.setMyData({
+      skimages: skimgs
+    });
+  }
+
 
 }
 var content = new Content();
@@ -188,6 +215,13 @@ var body = content.generateBodyJson();
 body.onLoad = content.onLoad;
 body.onMyShow = content.onMyShow;
 body.zhenmian = content.zhenmian;
+
+
+body.skuploadimg = content.skuploadimg;
+body.skminusImg = content.skminusImg;
+
+
+
 body.bindDateChange = content.bindDateChange;
 body.bindRegionChange = content.bindRegionChange;
 body.name = content.name;
@@ -196,4 +230,5 @@ body.dizhi = content.dizhi;
 body.shijian = content.shijian;
 body.wupin = content.wupin;
 body.tijiao = content.tijiao;
+
 Page(body)
