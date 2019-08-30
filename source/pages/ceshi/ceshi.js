@@ -97,11 +97,11 @@ class Content extends AppBase {
 
 
 
-    setTimeout(() => {
-      this.Base.setMyData({
-        nextone: nextone + 1
-      })
-    }, 250)
+    // setTimeout(() => {
+    //   this.Base.setMyData({
+    //     nextone: nextone + 1
+    //   })
+    // }, 250)
 
     this.Base.setMyData({
       check: check,

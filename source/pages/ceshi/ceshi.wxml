@@ -21,7 +21,6 @@
               <image class='icon-25 ' src='{{uploadpath}}resource/{{res.chuyu}}'></image>
               <view class="margin-left-10 {{check!='A'||id!=index?'':'txt-white'}}">厨余垃圾</view>
             </view>
-
           </view>
 
           <view class="" bindtap="binddianji" data-check="B" id="{{index}}"  data-title="{{item.name}}" data-cat="{{item.cat}}">
