@@ -1,54 +1,56 @@
 <view class="box">
 
-  <swiper class="" interval="3000" current='{{nextone}}' duration="500" style='width:750rpx;height:800rpx;'>
+  <swiper bindanimationfinish="jieshule" autoplay='{{false}}' circular='{{false}}' indicator-dots='{{false}}' disable='{{false}}' class="" interval="3000" current='{{nextone}}' duration="500" style='width:750rpx;height:100vh;'>
     <block wx:for="{{lajisousuo}}" wx:key="index">
       <swiper-item catchtouchmove="stopTouchMove">
+        <view style="background-image:url({{uploadpath+'resource/'+res.aaa}});background-size:100vw 100vh;height:100vh">
+          <view class="flex-row  tm">
+            <view class="margin-left-30 margin-top-30 txt-black h5">题目:</view>
+            <view class="margin-top-30 txt-black  h5 margin-left-10">{{index+1}}</view>
+            <view class="margin-top-30 txt-black h5">/{{lajisousuo.length}}</view>
+          </view>
+          <view class="flex-row flex-column margin-top-20">
+            <view class="h3 txt-black">{{item.name}}</view>
+           
+          </view>
+          <view class="aa">
 
-        <view class="flex-row">
-          <view class="margin-left-30 margin-top-30 txt-black h5">题目:</view>
-          <view class="margin-top-30 txt-lv h5 margin-left-10">{{index+1}}</view>
-          <view class="margin-top-30 h5">/{{lajisousuo.length}}</view>
+            <view class="" bindtap="binddianji" data-check="A" id="{{index}}" data-title="{{item.name}}" data-cat="{{item.cat}}">
+              <view class="btn  flex-row {{check!='A'||id!=index?'':'bg-blue'}}">
+                
+                <view class="margin-left-10 {{check!='A'||id!=index?'txt-black':'txt-white'}}">厨余垃圾</view>
+              </view>
+
+            </view>
+
+            <view class="" bindtap="binddianji" data-check="B" id="{{index}}" data-title="{{item.name}}" data-cat="{{item.cat}}">
+              <view class="btn  flex-row {{check!='B'||id!=index?'':'bg-blue'}}">
+                
+                <view class="margin-left-10 {{check!='B'||id!=index?'txt-black':'txt-white'}}">其他垃圾</view>
+              </view>
+
+            </view>
+
+            <view class="" bindtap="binddianji" data-check="C" id="{{index}}" data-title="{{item.name}}" data-cat="{{item.cat}}">
+              <view class="btn  flex-row {{check!='C'||id!=index?'':'bg-blue'}}">
+                
+                <view class="margin-left-10 {{check!='C'||id!=index?'txt-black':'txt-white'}}">可回收物</view>
+              </view>
+
+            </view>
+
+            <view class="" bindtap="binddianji" data-check="D" id="{{index}}" data-title="{{item.name}}" data-cat="{{item.cat}}">
+              <view class="btn  flex-row {{check!='D'||id!=index?'':'bg-blue'}}">
+               
+                <view class="margin-left-10 {{check!='D'||id!=index?'txt-black':'txt-white'}}">有害垃圾</view>
+              </view>
+
+            </view>
+
+          </view>
+
         </view>
-        <view class="flex-row flex-column">
-          <view class="h3 txt-black">{{item.name}}</view>
-          <view class="txt-black margin-top-20">属于以下哪种分类</view>
-        </view>
 
-        <view class="">
-          <view class="margin-left-30 margin-top-30 margin-bottom-20">请选择：</view>
-          <view class="" bindtap="binddianji" data-check="A" id="{{index}}"  data-title="{{item.name}}" data-cat="{{item.cat}}">
-            <view class="btn  flex-row {{check!='A'||id!=index?'bg-gray':'bg-blue'}}"  >
-              <image class='icon-25 ' src='{{uploadpath}}resource/{{res.chuyu}}'></image>
-              <view class="margin-left-10 {{check!='A'||id!=index?'':'txt-white'}}">厨余垃圾</view>
-            </view>
-
-          </view>
-
-          <view class="" bindtap="binddianji" data-check="B" id="{{index}}"  data-title="{{item.name}}" data-cat="{{item.cat}}">
-            <view class="btn  flex-row {{check!='B'||id!=index?'bg-gray':'bg-blue'}}" >
-              <image class='icon-25 ' src='{{uploadpath}}resource/{{res.qita}}'></image>
-              <view class="margin-left-10 {{check!='B'||id!=index?'':'txt-white'}}">其他垃圾</view>
-            </view>
-
-          </view>
-
-          <view class="" bindtap="binddianji" data-check="C" id="{{index}}"  data-title="{{item.name}}" data-cat="{{item.cat}}">
-            <view class="btn  flex-row {{check!='C'||id!=index?'bg-gray':'bg-blue'}}" >
-              <image class='icon-25 ' src='{{uploadpath}}resource/{{res.huishou}}'></image>
-              <view class="margin-left-10 {{check!='C'||id!=index?'':'txt-white'}}">可回收物</view>
-            </view>
-
-          </view>
-
-          <view class="" bindtap="binddianji" data-check="D" id="{{index}}"  data-title="{{item.name}}" data-cat="{{item.cat}}">
-            <view class="btn  flex-row {{check!='D'||id!=index?'bg-gray':'bg-blue'}}"  >
-              <image class='icon-25 ' src='{{uploadpath}}resource/{{res.youhai}}'></image>
-              <view class="margin-left-10 {{check!='D'||id!=index?'':'txt-white'}}">有害垃圾</view>
-            </view>
-
-          </view>
-
-        </view>
       </swiper-item>
     </block>
   </swiper>

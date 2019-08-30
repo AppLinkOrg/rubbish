@@ -1,0 +1,10 @@
+<view class="flex-row flex-center" style="width:100vw;height:100vh">
+  <view class="flex-1"> </view>
+  <view>
+    <view class="k" bindtap="huishou">预约回收</view>
+
+    <view class="k margin-top" bindtap="zhijie">直接联系</view>
+
+  </view>
+  <view class="flex-1"> </view>
+</view>

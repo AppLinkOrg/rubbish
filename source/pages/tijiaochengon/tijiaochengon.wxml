@@ -1,0 +1,6 @@
+<view>提交成功</view>
+<view>您的预约已经提交成功稍后会有专员为您联系</view>
+
+<view>感谢您的使用</view>
+
+<view bindtap="fanhui">返回首页</view>

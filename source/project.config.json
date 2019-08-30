@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 1,
 			"list": [
 				{
 					"id": -1,
@@ -58,7 +58,7 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 1,
 					"name": "测试报告/report",
 					"pathName": "pages/report/report",
 					"query": "",
@@ -68,6 +68,42 @@
 					"id": -1,
 					"name": "查找/find",
 					"pathName": "pages/find/find",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "入驻",
+					"pathName": "pages/ruzhu/ruzhu",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "回收",
+					"pathName": "pages/huishou/huishou",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "预约",
+					"pathName": "pages/yuyue/yuyue",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "联系人详情",
+					"pathName": "pages/lianxirenxianqin/lianxirenxianqin",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "直接联系",
+					"pathName": "pages/zhijie/zhijie",
+					"query": "",
 					"scene": null
 				}
 			]

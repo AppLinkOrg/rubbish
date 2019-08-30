@@ -36,16 +36,32 @@ class Content extends AppBase {
     var lajiapi = new LajiApi();
     console.log(e);
     //return
-
+      
     var name = e.detail.value
+    this.Base.setMyData({ name})
     if (name != undefined && name != "") {
       lajiapi.lajisousuo({
         name
       }, (check) => {
-        this.Base.setMyData({
-          check: check
+         
+        if (check.length==0)
+        {
+          this.Base.setMyData({
+            check: check,
+            meisoudao:true,
+            weitijiao:true
+          });
+        }
+        else{
 
-        });
+          this.Base.setMyData({
+            check: check,
+            meisoudao: false
+
+          });
+        }
+
+       
         console.log(check)
       });
 
@@ -62,6 +78,15 @@ class Content extends AppBase {
 
     })
   }
+  tijiao(){
+   var instapi=new InstApi();
+    instapi.queshi({name:this.Base.getMyData().name},(res)=>{
+
+      this.Base.setMyData({ weitijiao: false })
+
+    })
+   
+  }
 }
 var content = new Content();
 var body = content.generateBodyJson();
@@ -69,4 +94,5 @@ body.onLoad = content.onLoad;
 body.onMyShow = content.onMyShow;
 body.bindquxiao = content.bindquxiao; 
 body.bindcha = content.bindcha;
+body.tijiao = content.tijiao;
 Page(body)

@@ -6,13 +6,31 @@
   background-color: rgb(243, 243, 243);
   display: flex;
   align-items: center;
-
+}
+.nostyle view,navigator,input,text,textarea{
+  color:unset;
+  font-size:unset;
+  
+  word-break: normal;
+}
+.box {
+  margin-top:20rpx;
+  width: 72vw;
+  height: 33vh;
+  background-color: #ffe548;
+  border-radius: 10rpx;
 }
 
-.box {
-  margin: 30rpx;
-  width: 92vw;
-  height: 650rpx;
-  background-color: bisque;
-  border-radius: 10rpx;
+.dd {
+  margin-top: 16vh;
+  margin-left:64vw;
+}
+.dibu{
+
+ position: fixed;
+ text-align: center;
+  width: 100vw;
+  
+bottom: 2vh;
+
 }

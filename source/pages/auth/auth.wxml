@@ -1,7 +1,9 @@
 <!--index.wxml-->
-<view style='margin-top:160rpx;' class='text-center' >
+<!-- <view style='margin-top:160rpx;' class='text-center' >
   <image src='{{uploadpath}}inst/{{instinfo.logo}}' style='width:400rpx;' mode='widthFix'></image>
 </view>
+
+
 
 <view class='padding-40'>
   <view class='border-bottom'></view>
@@ -14,4 +16,15 @@
   <view class='margin-top'>
     <button type='primary' class='h5 margin-top' open-type="getUserInfo" bindgetuserinfo="getUserInfo" >授权并登录</button>
   </view>
+</view> -->
+
+
+<view style="background-image:url({{uploadpath+'resource/'+res.ccc}});background-size:100vw 100vh;height:100vh">
+
+<view class="flex-row flex-center dd">
+<view class="flex-1"></view>
+<button  class='h5  clear-button' open-type="getUserInfo" bindgetuserinfo="getUserInfo" >立即启用</button>
+<view class="flex-1"></view>
+</view>
+
 </view>

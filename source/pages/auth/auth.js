@@ -16,7 +16,7 @@ class Content extends AppBase {
     this.Base.Page = this;
     //options.id=5;
     super.onLoad(options);
-    //this.Base.needauth = true;
+    this.Base.needauth = false;
   }
   onMyShow() {
     var that = this;
@@ -28,7 +28,7 @@ class Content extends AppBase {
   getUserInfo(e) {
     console.log(666666666);
     wx.reLaunch({
-      url: '/pages/home/home',
+      url: '/pages/check/check',
     });
     //open-type="getUserInfo" bindgetuserinfo="getUserInfo"
   }

@@ -22,7 +22,8 @@ class Content extends AppBase {
     super.onLoad(options);
     this.Base.setMyData({
       laji: [],
-      nextone: 0
+      nextone: 0,
+      yixuan: false
     })
   }
   onMyShow() {
@@ -34,7 +35,9 @@ class Content extends AppBase {
       limit: 10
     }, (lajisousuo) => {
       this.Base.setMyData({
-        lajisousuo: lajisousuo
+        lajisousuo: lajisousuo,
+        nextone:0
+
       });
     });
 
@@ -55,6 +58,9 @@ class Content extends AppBase {
     //   lajisousuo: lajisousuo,
     // })
     var id = e.currentTarget.id;
+    console.log(id);
+    console.log(this.Base.getMyData().yixuan);
+
     var nextone = this.Base.getMyData().nextone;
     var check = e.currentTarget.dataset.check;
     var title = e.currentTarget.dataset.title;
@@ -74,20 +80,16 @@ class Content extends AppBase {
       var type = '有害垃圾'
     }
 
-
-    laji.push({
+    laji[id] = {
       'title': title,
       'xuanxiang': type,
       'cat': cat
-    })
-    console.log(title, "标题")
+    }
 
 
-
-    console.log(check)
-    console.log(id);
-    if (id==9) {
+    if (id == 9) {
       var laji = JSON.stringify(this.Base.getMyData().laji);
+    
       wx.navigateTo({
         url: '/pages/report/report?laji=' + laji
       })
@@ -95,13 +97,10 @@ class Content extends AppBase {
 
 
 
+    this.jinqu(id);
 
 
-    setTimeout(() => {
-      this.Base.setMyData({
-        nextone: nextone + 1
-      })
-    }, 250)
+
 
     this.Base.setMyData({
       check: check,
@@ -111,15 +110,17 @@ class Content extends AppBase {
 
   }
 
-  // bindtijiao() {
-  //   var laji = JSON.stringify(this.Base.getMyData().laji);
+  jinqu(nextone) {
+    console.log("进来了熬" + nextone);
+    setTimeout(() => {
+      this.Base.setMyData({
+        nextone: parseInt( nextone) + 1,
 
-  //   wx.navigateTo({
-  //     url: '/pages/report/report?laji=' + laji
-  //   })
-  // }
+      })
+    }, 250)
+  }
   stopTouchMove() {
-    return false;
+    console.log("禁止滑动");
   }
 }
 var content = new Content();
@@ -129,5 +130,5 @@ body.onMyShow = content.onMyShow;
 body.binddianji = content.binddianji;
 body.stopTouchMove = content.stopTouchMove;
 body.bindtijiao = content.bindtijiao;
-
+body.jinqu = content.jinqu;
 Page(body)

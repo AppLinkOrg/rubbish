@@ -1,41 +1,54 @@
 <view class="box">
   <view class="flex-row flex-column ">
     <view class="txt-black h2 margin-top">深圳市垃圾分类统考</view>
-    <view class="txt-red h3">分</view>
+    <view class="txt-red h3">{{fenshu}}分</view>
   </view>
   <view class="biao">
-    <view class="flex-row bg-gray">
-      <view class="txt-black margin-left-70 txt-bold">题目</view>
+    <view class="xian1"></view>
+    <view class="xian2"></view>
+    <view class="xian3"></view>
+    <view class="flex-row reddi">
+      <view class="txt-black text-center  txt-bold padding-5" style="width:100rpx;">序号</view>
+      <view class="txt-black   txt-bold  padding-5" style="width:300rpx;">题目</view>
       <view class="flex-1"></view>
       <view class="right"></view>
-      <view class="txt-black margin-right-40 txt-bold">我的答案</view>
-      <view class="txt-black margin-right-30 txt-bold">正确答案</view>
+      <view class="txt-black  txt-bold text-center padding-5" style="width:150rpx;">我的答案</view>
+      <view class="txt-black  txt-bold text-center padding-5" style="width:150rpx;">正确答案</view>
     </view>
     <view wx:for="{{laji}}">
-      <view class="flex-row ">
-        <view class="margin-left-20 h5">{{index+1}}</view>
-        <view class="txt-black margin-left-30 h5">{{item.title}}</view>
+      <view class="flex-row xhx">
+        <view class=" h5 padding-5 text-center" style="width:100rpx">{{index+1}}</view>
+        <view class="txt-black  h5  padding-5" style="width:300rpx">{{item.title}}</view>
         <view class="flex-1"></view>
-        <view class="txt-black margin-right-50 h5">{{item.xuanxiang}}</view>
-        <view class="txt-black margin-right-40 h5">{{item.cat}}</view>
+        <view class="txt-black text-center padding-5  {{item.xuanxiang==item.cat?'':'henxian'}} h5" style="width:150rpx;">{{item.xuanxiang}}</view>
+
+        <view class="txt-black  text-center padding-5 h5" style="width:150rpx;">{{item.cat}}</view>
       </view>
     </view>
 
   </view>
-  <view class="flex-row dibu">
+  <view class="flex-row padding-20">
     <!-- <view class="flex-column margin-left-50">
       <image class='icon  margin-left-70' src='{{uploadpath}}resource/{{res.baocun}}' bindtap="bindsousuo"></image>
       <view class="txt-black">保存成绩单</view>
     </view> -->
-
-    <view class="flex-column margin-left-70 margin-top-30" bindtap="bindzaici">
-      <image class='icon margin-left-50' src='{{uploadpath}}resource/{{res.zaici}}'></image>
+    <view class="flex-1"></view>
+    <view class="flex-column  flex-row margin-top-30" bindtap="bindzaici">
+      <image class='icon-30 ' mode="widthFix" src='{{uploadpath}}resource/{{res.zaici}}'></image>
       <view class="txt-black margin-top-30">再考一次</view>
     </view>
+
     <view class="flex-1"></view>
-    <button open-type="share" class="margin-right-70 btn" bindtap="bindshare" style="background-color:white;">
-      <image class='icon' src='{{uploadpath}}resource/{{res.share}}'></image>
-      <view class="txt-black">分享</view>
+    <view class="flex-column    flex-row margin-top-30" bindtap="baocun">
+      <image class='icon-30 ' mode="widthFix" src='{{uploadpath}}resource/{{res.baocunhaibao}}'></image>
+      <view class="txt-black margin-top-30">保存海报</view>
+    </view>
+
+    <view class="flex-1"></view>
+    <button open-type="share" class="flex-column flex-row clear-button  margin-top-30 btn" bindtap="bindshare">
+      <image class='icon-30 ' mode="widthFix" src='{{uploadpath}}resource/{{res.share}}'></image>
+      <view class="txt-black margin-top-30">分享</view>
     </button>
+    <view class="flex-1"></view>
   </view>
 </view>
