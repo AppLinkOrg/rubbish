@@ -4,10 +4,11 @@
       <image class="icon-40 radius-50" src="{{uploadpath}}huishou/{{huishouinfo.photo}}"></image>
       <view class="margin-left-20 txt-black">{{huishouinfo.name}}</view>
     </view>
-    <view class="padding-20 flex-row flex-center">
+    <view class="padding-20 flex-row flex-center" bindtap="lianxi">
       <image class='icon margin-right-10 ' src='{{uploadpath}}resource/{{res.phone}}'></image>
       <view class="txt-black">联系电话：</view>
       <view class="txt-black">{{huishouinfo.dianhua}}</view>
+      <view class="h6 margin-left-20">(点击拨打)</view>
     </view>
     <view class="padding-20 flex-row flex-center">
       <image class='icon margin-right-10 ' src='{{uploadpath}}resource/{{res.diqu}}'></image>

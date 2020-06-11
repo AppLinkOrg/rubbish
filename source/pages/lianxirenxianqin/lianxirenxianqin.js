@@ -25,9 +25,23 @@ class Content extends AppBase {
     })
 
   }
+  lianxi(){
+    var huishouinfo = this.Base.getMyData().huishouinfo;
+    wx.showActionSheet({
+      itemList: ["拨打电话"],
+      success(e) {
+        if (e.tapIndex == 0) {
+          wx.makePhoneCall({
+            phoneNumber: huishouinfo.dianhua
+          })
+        }
+      }
+    })
+  }
 }
 var content = new Content();
 var body = content.generateBodyJson();
 body.onLoad = content.onLoad;
 body.onMyShow = content.onMyShow;
+body.lianxi = content.lianxi;
 Page(body)

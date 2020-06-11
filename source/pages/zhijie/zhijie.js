@@ -163,7 +163,7 @@ class Content extends AppBase {
     api.yuyue(json, (res) => {
       if (res.code == 0) {
         dapi.sendverifycode({
-          mobile: that.Base.getMyData().instinfo.shouji,
+          mobile: that.Base.getMyData().instinfo.instmobile,
           type: 'tonzhi'
         }, (dx) => {
 

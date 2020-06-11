@@ -148,7 +148,14 @@ class Content extends AppBase {
   
     var api = new HuishouApi;
     api.huishou(json,(res)=>{
-
+      if(res.code=='0'){
+        this.Base.toast('提交成功！');
+        wx.reLaunch({
+          url: '/pages/check/check',
+        })
+      }else {
+        this.Base.toast(res.result);
+      }
 
    console.log(res);
     })

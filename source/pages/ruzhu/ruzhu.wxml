@@ -4,7 +4,7 @@
   <view class="txt-black">头像上传</view>
   <image wx:if="{{fenmian==''}}" bindtap='jguploadimg' class="margin-left-70 icon-60" src='{{uploadpath}}resource/{{res.uplogo}}'></image>
 
-  <image mode='aspectFill' src='{{uploadpath}}fenmian/{{fenmian}}' bindtap='jguploadimg' wx:if="{{fenmian!=''}}" class='icon-60'></image>
+  <image mode='aspectFill' src='{{uploadpath}}huishou/{{fenmian}}' bindtap='jguploadimg' wx:if="{{fenmian!=''}}" class='margin-left-70 icon-60'></image>
 </view>
 <view class="padding-20 flex-row flex-center">
   <view class="txt-black" style="width:200rpx;">姓名</view>

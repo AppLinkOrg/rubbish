@@ -15,16 +15,18 @@
 }
 
 .box {
-  margin-top: 20rpx;
-  width: 72vw;
-  height: 33vh;
+  margin-top: 26rpx;
+  width: 67vw;
+  height: 32vh;
   background-color: #ffe548;
   border-radius: 10rpx;
+  padding:10rpx 20rpx;
 }
+
 
 .dd {
   margin-top: 16vh;
-  margin-left: 64vw;
+  margin-left: 62vw;
 }
 
 .dibu {

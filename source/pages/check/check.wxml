@@ -18,13 +18,14 @@
     </view>
 
   </view>
-  <view class="dd txt-white">{{oneinfo.name}}</view>
+  <view class="dd txt-white">{{oneinfo.lajileibie_name}}</view>
   <view class="flex-row flex-center ">
     <view class="flex-1"></view>
     <view class="box">
-      <view class='margin-left-30 nostyle margin-right-30'>
+      <!-- <view class='margin-left-30 nostyle margin-right-30'>
         <template is="wxParse" data="{{wxParseData:item.nodes}}" />
-      </view>
+      </view> -->
+      <text >{{oneinfo.content}}</text>
     </view>
 
     <view class="flex-1"></view>
