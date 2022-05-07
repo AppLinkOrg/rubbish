@@ -9,7 +9,7 @@ import { ApiConfig } from 'apiconfig';
 export class HaibaoApi{
 
 
-    haibao(json, callback, showLoading = true) {
+    haibao2(json, callback, showLoading = true) {
 
         if (showLoading)
             ApiConfig.ShowLoading();
@@ -18,7 +18,7 @@ export class HaibaoApi{
         console.log(header);
         console.log(json);
         wx.request({
-            url: ApiConfig.GetApiUrl() + 'haibao/haibao',
+            url: ApiConfig.GetApiUrl() + 'haibao/haibao2',
             data: json,
             method: 'POST',
             dataType: 'json',

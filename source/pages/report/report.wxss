@@ -10,6 +10,26 @@ page {
     width: 92vw;
   
 }
+.xinrenimg {
+  width: 100vw;
+  position: fixed;
+  top: 100rpx;
+  z-index: 99999;
+}
+.xrimgs {
+  width: 601rpx;
+  height: 866rpx;
+}
+.mask{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  opacity: 0.5;
+  z-index:99;
+}
 .xhx{
   border-bottom: 1rpx solid #edeceb;
 }

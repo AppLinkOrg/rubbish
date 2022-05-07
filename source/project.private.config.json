@@ -1,68 +1,13 @@
 {
-    "description": "项目配置文件",
-    "packOptions": {
-        "ignore": []
-    },
-    "setting": {
-        "urlCheck": false,
-        "es6": true,
-        "enhance": true,
-        "postcss": true,
-        "preloadBackgroundData": false,
-        "minified": true,
-        "newFeature": true,
-        "coverView": true,
-        "nodeModules": false,
-        "autoAudits": false,
-        "showShadowRootInWxmlPanel": true,
-        "scopeDataCheck": false,
-        "uglifyFileName": false,
-        "checkInvalidKey": true,
-        "checkSiteMap": true,
-        "uploadWithSourceMap": true,
-        "compileHotReLoad": false,
-        "lazyloadPlaceholderEnable": false,
-        "useMultiFrameRuntime": true,
-        "useApiHook": true,
-        "useApiHostProcess": true,
-        "babelSetting": {
-            "ignore": [],
-            "disablePlugins": [],
-            "outputPath": ""
-        },
-        "enableEngineNative": false,
-        "useIsolateContext": true,
-        "userConfirmedBundleSwitch": false,
-        "packNpmManually": false,
-        "packNpmRelationList": [],
-        "minifyWXSS": true,
-        "disableUseStrict": false,
-        "showES6CompileOption": false,
-        "useCompilerPlugins": false,
-        "minifyWXML": true
-    },
-    "compileType": "miniprogram",
-    "libVersion": "2.5.0",
-    "appid": "wx93b099587cc9c188",
-    "projectname": "%E5%9E%83%E5%9C%BE%E5%88%86%E7%B1%BB",
-    "debugOptions": {
-        "hidedInDevtools": []
-    },
-    "isGameTourist": false,
-    "simulatorType": "wechat",
-    "simulatorPluginLibVersion": {},
+    "setting": {},
     "condition": {
-        "search": {
-            "list": []
-        },
-        "conversation": {
-            "list": []
-        },
         "plugin": {
             "list": []
         },
         "game": {
-            "currentL": -1,
+            "list": []
+        },
+        "gamePlugin": {
             "list": []
         },
         "miniprogram": {
@@ -75,10 +20,9 @@
                     "scene": null
                 },
                 {
-                    "id": 1,
                     "name": "测试报告/report",
                     "pathName": "pages/report/report",
-                    "query": "",
+                    "query": "id=4",
                     "scene": null
                 },
                 {
@@ -127,6 +71,13 @@
                     "id": -1,
                     "name": "预约成功提示/tijiaochengon",
                     "pathName": "pages/tijiaochengon/tijiaochengon",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/report/report",
+                    "pathName": "pages/report/report",
+                    "query": "laji=[{\"title\":\"旧内衣\",\"xuanxiang\":\"其他垃圾\",\"cat\":\"可回收物\"},{\"title\":\"柠檬干\",\"xuanxiang\":\"可回收物\",\"cat\":\"厨余垃圾\"},{\"title\":\"软膜撕拉面膜\",\"xuanxiang\":\"其他垃圾\",\"cat\":\"厨余垃圾\"},{\"title\":\"沙拉袋\",\"xuanxiang\":\"其他垃圾\",\"cat\":\"厨余垃圾\"},{\"title\":\"北京烤鸭\",\"xuanxiang\":\"其他垃圾\",\"cat\":\"其他垃圾\"},{\"title\":\"薏米\",\"xuanxiang\":\"其他垃圾\",\"cat\":\"其他垃圾\"},{\"title\":\"避孕套包装盒\",\"xuanxiang\":\"其他垃圾\",\"cat\":\"厨余垃圾\"},{\"title\":\"围裙\",\"xuanxiang\":\"其他垃圾\",\"cat\":\"回收物\"},{\"title\":\"没有污损的办公用纸\",\"xuanxiang\":\"其他垃圾\",\"cat\":\"可回收物\"},{\"title\":\"钢丝球\",\"xuanxiang\":\"其他垃圾\",\"cat\":\"厨余垃圾\"}]",
                     "scene": null
                 }
             ]

@@ -9,6 +9,70 @@ import { ApiConfig } from 'apiconfig';
 export class InstApi{
 
 
+    aboutus(json, callback, showLoading = true) {
+
+        if (showLoading)
+            ApiConfig.ShowLoading();
+
+        var header = ApiConfig.GetHeader();
+        console.log(header);
+        console.log(json);
+        wx.request({
+            url: ApiConfig.GetApiUrl() + 'inst/aboutus',
+            data: json,
+            method: 'POST',
+            dataType: 'json',
+            header: header,
+            success: function (res) {
+                if (callback != null) {
+                    callback(res.data);
+                }
+            },
+            fail: function (res) {
+                console.log(res);
+                callback(false);
+            },
+            complete: function (res) {
+                console.log(res);
+            
+                if (showLoading)
+                    ApiConfig.CloseLoading();
+            }
+        })
+    }
+
+    aboutuslist(json, callback, showLoading = true) {
+
+        if (showLoading)
+            ApiConfig.ShowLoading();
+
+        var header = ApiConfig.GetHeader();
+        console.log(header);
+        console.log(json);
+        wx.request({
+            url: ApiConfig.GetApiUrl() + 'inst/aboutuslist',
+            data: json,
+            method: 'POST',
+            dataType: 'json',
+            header: header,
+            success: function (res) {
+                if (callback != null) {
+                    callback(res.data);
+                }
+            },
+            fail: function (res) {
+                console.log(res);
+                callback(false);
+            },
+            complete: function (res) {
+                console.log(res);
+            
+                if (showLoading)
+                    ApiConfig.CloseLoading();
+            }
+        })
+    }
+
     indexbanner(json, callback, showLoading = true) {
 
         if (showLoading)
@@ -73,7 +137,7 @@ export class InstApi{
         })
     }
 
-    qrcode(json, callback, showLoading = true) {
+    queshi(json, callback, showLoading = true) {
 
         if (showLoading)
             ApiConfig.ShowLoading();
@@ -82,7 +146,7 @@ export class InstApi{
         console.log(header);
         console.log(json);
         wx.request({
-            url: ApiConfig.GetApiUrl() + 'inst/qrcode',
+            url: ApiConfig.GetApiUrl() + 'inst/queshi',
             data: json,
             method: 'POST',
             dataType: 'json',
@@ -137,7 +201,7 @@ export class InstApi{
         })
     }
 
-    queshi(json, callback, showLoading = true) {
+    qrcode(json, callback, showLoading = true) {
 
         if (showLoading)
             ApiConfig.ShowLoading();
@@ -146,7 +210,7 @@ export class InstApi{
         console.log(header);
         console.log(json);
         wx.request({
-            url: ApiConfig.GetApiUrl() + 'inst/queshi',
+            url: ApiConfig.GetApiUrl() + 'inst/qrcode',
             data: json,
             method: 'POST',
             dataType: 'json',

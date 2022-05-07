@@ -20,6 +20,7 @@ export class AppBase {
   options = null;
   data = {
     uploadpath: ApiConfig.GetUploadPath(),
+    uploadurl:ApiConfig.GetUploadAPI(),
     copyright: { name: "", website: "mecloud.com" }
   };
   Page = null;

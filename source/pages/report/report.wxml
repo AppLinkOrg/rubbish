@@ -1,6 +1,6 @@
 <view class="box">
   <view class="flex-row flex-column ">
-    <view class="txt-black h2 margin-top">深圳市垃圾分类统考</view>
+    <view class="txt-black h2 margin-top">{{instinfo.title}}</view>
     <view class="txt-red h3">{{fenshu}}分</view>
   </view>
   <view class="biao">
@@ -32,23 +32,52 @@
       <image class='icon  margin-left-70' src='{{uploadpath}}resource/{{res.baocun}}' bindtap="bindsousuo"></image>
       <view class="txt-black">保存成绩单</view>
     </view> -->
-    <view class="flex-1"></view>
-    <view class="flex-column  flex-row margin-top-30" bindtap="bindzaici">
+    <view class="flex-1">
+      <view class="flex-column  flex-row margin-top-30" bindtap="bindzaici">
       <image class='icon-30 ' mode="widthFix" src='{{uploadpath}}resource/{{res.zaici}}'></image>
       <view class="txt-black margin-top-30">再考一次</view>
     </view>
+    </view>
+  
 
-    <view class="flex-1"></view>
-    <view class="flex-column    flex-row margin-top-30" bindtap="baocun">
+    <view class="flex-1">
+       <view class="flex-column    flex-row margin-top-30" bindtap="baocun">
       <image class='icon-30 ' mode="widthFix" src='{{uploadpath}}resource/{{res.baocunhaibao}}'></image>
       <view class="txt-black margin-top-30">保存海报</view>
     </view>
+    </view>
+ 
 
-    <view class="flex-1"></view>
-    <button open-type="share" class="flex-column flex-row clear-button  margin-top-30 btn" bindtap="bindshare">
+    <view class="flex-1">
+     <button open-type="share" class="flex-column flex-row clear-button  margin-top-30 btn" bindtap="bindshare">
       <image class='icon-30 ' mode="widthFix" src='{{uploadpath}}resource/{{res.share}}'></image>
       <view class="txt-black margin-top-30">分享</view>
     </button>
-    <view class="flex-1"></view>
+    </view>
+   
+    <!-- <view class="flex-1"></view> -->
   </view>
+</view>
+
+<!-- <model>
+<image src="{{apiurl}}uploadurl/{{res.baocunhaibao}}"></image>
+</model> -->
+
+<view class="mask" wx:if='{{guanxinren}}'></view>
+<view class="xinrenimg "  wx:if='{{guanxinren}}'>
+
+<view class="flex-row flex-center">
+  <view class="flex-1"></view>
+  <image src='{{uploadpath}}resource/{{res.chu}}' bindtap="guanbi" class="icon-25 margin-right-40"></image>
+</view>
+<view class="flex-row flex-center" style="position:relative" bindtap="xiangqing">
+  <view class="flex-1"></view>
+  <image src='{{haibao}}' class="xrimgs"></image>
+
+  <!-- <view class=""></view> -->
+  <view class="flex-1"></view>
+</view>
+
+<image src='{{uploadpath}}resource/{{res.baocun}}' class="icon" style="display: block;margin: 40rpx auto 0;" bindtap="baocun2"></image>
+
 </view>

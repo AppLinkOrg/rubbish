@@ -25,7 +25,7 @@ class Content extends AppBase {
     super.onLoad(options);
     var id = options.id;
     this.Base.setMyData({
-      laji: JSON.parse(this.Base.options.laji)
+      laji: JSON.parse(this.Base.options.laji),guanxinren:false
     })
     var laji = JSON.parse(this.Base.options.laji);
       var fenshu=0;
@@ -52,7 +52,16 @@ class Content extends AppBase {
     var that = this;
     var baocunapi = new BaocunApi();
     var api = new HaibaoApi();
-    api.haibao({ id: this.Base.getMyData().memberinfo.id, isdebug: 'Y', fenshu: this.Base.getMyData().fenshu }, (haibao) => {
+    // api.haibao({ id: this.Base.getMyData().memberinfo.id, isdebug: 'Y', fenshu: this.Base.getMyData().fenshu }, (haibao) => {
+
+    //   this.Base.setMyData({
+    //     haibao:
+    //       "https://cmsdev.app-link.org/Users/alucard263096/rubbish/upload/rubbish/" + haibao.return
+    //   });
+
+
+    // })
+    api.haibao2({ id: this.Base.getMyData().memberinfo.id, isdebug: 'Y', fenshu: this.Base.getMyData().fenshu }, (haibao) => {
 
       this.Base.setMyData({
         haibao:
@@ -82,9 +91,12 @@ class Content extends AppBase {
   
   }
   baocun(){
+this.Base.setMyData({guanxinren:true})
+    // this.download(this.Base.getMyData().haibao);
 
+  }
+  baocun2(){
     this.download(this.Base.getMyData().haibao);
-
   }
   onShareAppMessage(e) {
     return {
@@ -96,7 +108,12 @@ class Content extends AppBase {
     }
 
   }
+  guanbi(){
+    this.Base.setMyData({guanxinren:false})
+
+  }
 }
+
 var content = new Content();
 var body = content.generateBodyJson();
 body.onLoad = content.onLoad;
@@ -104,4 +121,7 @@ body.onMyShow = content.onMyShow;
 body.bindzaici = content.bindzaici;
 body.bindshare = content.bindshare;
 body.baocun = content.baocun;
+
+body.baocun2 = content.baocun2;
+body.guanbi = content.guanbi;
 Page(body)
