@@ -78,6 +78,6 @@
   <view class="flex-1"></view>
 </view>
 
-<image src='{{uploadpath}}resource/{{res.baocun}}' class="icon" style="display: block;margin: 40rpx auto 0;" bindtap="baocun2"></image>
+<image src='{{uploadpath}}resource/{{res.baocun2}}' mode="aspectFit" style="display: block;margin: 40rpx auto 0;height: 80rpx;" bindtap="baocun2"></image>
 
 </view>
