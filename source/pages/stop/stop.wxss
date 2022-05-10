@@ -1,0 +1,33 @@
+.border {
+  border-bottom: 1rpx solid rgba(207, 207, 207, 0.867);
+}
+
+.submit {
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  border-radius: 40rpx;
+  height: 80rpx;
+  width: 92vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #44C8C6;
+  color: white;
+}
+
+.imgicon {
+  width: 86vw;
+  height: 400rpx;
+  margin-left: 30rpx;
+}
+
+.bgwhite {
+  background-color: white;
+  height: 100rpx;
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+}
+.bot{
+  border-bottom: 16rpx solid rgba(238, 238, 238, 0.867);
+}

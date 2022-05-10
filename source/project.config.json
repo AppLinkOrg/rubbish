@@ -1,135 +1,135 @@
 {
-    "description": "项目配置文件",
-    "packOptions": {
-        "ignore": []
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "lazyloadPlaceholderEnable": false,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "useApiHostProcess": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
     },
-    "setting": {
-        "urlCheck": false,
-        "es6": true,
-        "enhance": true,
-        "postcss": true,
-        "preloadBackgroundData": false,
-        "minified": true,
-        "newFeature": true,
-        "coverView": true,
-        "nodeModules": false,
-        "autoAudits": false,
-        "showShadowRootInWxmlPanel": true,
-        "scopeDataCheck": false,
-        "uglifyFileName": false,
-        "checkInvalidKey": true,
-        "checkSiteMap": true,
-        "uploadWithSourceMap": true,
-        "compileHotReLoad": false,
-        "lazyloadPlaceholderEnable": false,
-        "useMultiFrameRuntime": true,
-        "useApiHook": true,
-        "useApiHostProcess": true,
-        "babelSetting": {
-            "ignore": [],
-            "disablePlugins": [],
-            "outputPath": ""
-        },
-        "enableEngineNative": false,
-        "useIsolateContext": true,
-        "userConfirmedBundleSwitch": false,
-        "packNpmManually": false,
-        "packNpmRelationList": [],
-        "minifyWXSS": true,
-        "disableUseStrict": false,
-        "showES6CompileOption": false,
-        "useCompilerPlugins": false,
-        "minifyWXML": true
+    "enableEngineNative": false,
+    "useIsolateContext": true,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "disableUseStrict": false,
+    "showES6CompileOption": false,
+    "useCompilerPlugins": false,
+    "minifyWXML": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.5.0",
+  "appid": "wx93b099587cc9c188",
+  "projectname": "laji",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "search": {
+      "list": []
     },
-    "compileType": "miniprogram",
-    "libVersion": "2.5.0",
-    "appid": "wx93b099587cc9c188",
-    "projectname": "%E5%9E%83%E5%9C%BE%E5%88%86%E7%B1%BB",
-    "debugOptions": {
-        "hidedInDevtools": []
+    "conversation": {
+      "list": []
     },
-    "isGameTourist": false,
-    "simulatorType": "wechat",
-    "simulatorPluginLibVersion": {},
-    "condition": {
-        "search": {
-            "list": []
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "currentL": -1,
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "测试/ceshi",
+          "pathName": "pages/ceshi/ceshi",
+          "query": "",
+          "scene": null
         },
-        "conversation": {
-            "list": []
+        {
+          "id": 1,
+          "name": "测试报告/report",
+          "pathName": "pages/report/report",
+          "query": "",
+          "scene": null
         },
-        "plugin": {
-            "list": []
+        {
+          "id": -1,
+          "name": "查找/find",
+          "pathName": "pages/find/find",
+          "query": "",
+          "scene": null
         },
-        "game": {
-            "currentL": -1,
-            "list": []
+        {
+          "id": -1,
+          "name": "入驻",
+          "pathName": "pages/ruzhu/ruzhu",
+          "query": "",
+          "scene": null
         },
-        "miniprogram": {
-            "list": [
-                {
-                    "id": -1,
-                    "name": "测试/ceshi",
-                    "pathName": "pages/ceshi/ceshi",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "id": 1,
-                    "name": "测试报告/report",
-                    "pathName": "pages/report/report",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "id": -1,
-                    "name": "查找/find",
-                    "pathName": "pages/find/find",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "id": -1,
-                    "name": "入驻",
-                    "pathName": "pages/ruzhu/ruzhu",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "id": -1,
-                    "name": "回收",
-                    "pathName": "pages/huishou/huishou",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "id": -1,
-                    "name": "预约",
-                    "pathName": "pages/yuyue/yuyue",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "id": -1,
-                    "name": "联系人详情",
-                    "pathName": "pages/lianxirenxianqin/lianxirenxianqin",
-                    "query": "id=1",
-                    "scene": null
-                },
-                {
-                    "id": -1,
-                    "name": "直接联系",
-                    "pathName": "pages/zhijie/zhijie",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "id": -1,
-                    "name": "预约成功提示/tijiaochengon",
-                    "pathName": "pages/tijiaochengon/tijiaochengon",
-                    "scene": null
-                }
-            ]
+        {
+          "id": -1,
+          "name": "回收",
+          "pathName": "pages/huishou/huishou",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "预约",
+          "pathName": "pages/yuyue/yuyue",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "联系人详情",
+          "pathName": "pages/lianxirenxianqin/lianxirenxianqin",
+          "query": "id=1",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "直接联系",
+          "pathName": "pages/zhijie/zhijie",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "预约成功提示/tijiaochengon",
+          "pathName": "pages/tijiaochengon/tijiaochengon",
+          "scene": null
         }
+      ]
     }
+  }
 }

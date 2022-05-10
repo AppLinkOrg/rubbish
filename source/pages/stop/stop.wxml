@@ -1,7 +1,4 @@
-<view class="text-center margin-top-100 txt-red f-36 txt-bold">
-  功能暂未开放
-</view>
-<!-- <view class="padding-20 h4 txt-black">回收员入驻信息填写</view>
+<view class="padding-20 h4 txt-black">回收员入驻信息填写</view>
 
 <view class="padding-20 flex-row flex-center">
   <view class="txt-black">头像上传</view>
@@ -53,4 +50,4 @@
 </view>
 <view class="bgwhite">
   <view class="submit margin-top-5" bindtap="tijiao">提交</view>
-</view> -->
+</view>

@@ -22,12 +22,16 @@ class Content extends AppBase {
     var that = this;
   }
   huishou() {
+    this.Base.toast("功能暂未开放~")
+    return;
     wx.navigateTo({
       url: '/pages/zhijie/zhijie',
     })
 
   }
   zhijie() {
+    this.Base.toast("功能暂未开放~")
+    return;
     wx.navigateTo({
       url: '/pages/yuyue/yuyue',
     })
