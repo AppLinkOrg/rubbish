@@ -43,12 +43,6 @@
         "pagePath": "pages/huishou/huishou",
         "iconPath": "images/icons/c-c.png",
         "selectedIconPath": "images/icons/c.png"
-      },
-      {
-        "text": "入驻",
-        "pagePath": "pages/ruzhu/ruzhu",
-        "iconPath": "images/icons/d-d.png",
-        "selectedIconPath": "images/icons/d.png"
       }
     ]
   },
