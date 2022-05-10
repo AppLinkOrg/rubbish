@@ -39,7 +39,7 @@
         "selectedIconPath": "images/icons/b.png"
       },
       {
-        "text": "预约",
+        "text": "回收",
         "pagePath": "pages/huishou/huishou",
         "iconPath": "images/icons/c-c.png",
         "selectedIconPath": "images/icons/c.png"
